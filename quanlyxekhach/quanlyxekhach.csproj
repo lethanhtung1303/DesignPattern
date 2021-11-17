@@ -63,6 +63,12 @@
     <Compile Include="ManageCustomer.Designer.cs">
       <DependentUpon>ManageCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageEmployee.Designer.cs">
+      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountDao.cs" />
     <Compile Include="AbstractModel\SqlFactory.cs" />
