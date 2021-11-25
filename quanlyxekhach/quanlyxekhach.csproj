@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>quanlyxekhach</RootNamespace>
     <AssemblyName>quanlyxekhach</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -78,6 +79,8 @@
     <Compile Include="AcccountManagement.Designer.cs">
       <DependentUpon>AcccountManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerDAO.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeDAO.cs" />
     <Compile Include="Payment.cs">
@@ -106,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageCustomer.resx">
       <DependentUpon>ManageCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageEmployee.resx">
+      <DependentUpon>ManageEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

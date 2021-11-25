@@ -263,6 +263,7 @@ namespace quanlyxekhach
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                     showAll();
+                    ClearData();
                 }
                 else
                 {
