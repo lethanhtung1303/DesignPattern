@@ -24,6 +24,10 @@ namespace quanlyxekhach.formFactory
             {
                 return new ManageCustomer();
             }
+            else if (nameForm == "ADMIN")
+            {
+                return new ManageEmployee();
+            }
             return null;
         }
     }

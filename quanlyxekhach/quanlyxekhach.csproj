@@ -49,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractModel\AbstractDbFactory.cs" />
+    <Compile Include="CommandButton\CommandButtonManage.cs" />
+    <Compile Include="CommandButton\ManageButtonDisable.cs" />
+    <Compile Include="CommandButton\ManageButtonEnable.cs" />
     <Compile Include="formFactory\ChangeForm.cs" />
     <Compile Include="formFactory\FormController.cs" />
     <Compile Include="formFactory\FormFactory.cs" />

@@ -1,4 +1,5 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.CommandButton;
 using quanlyxekhach.formFactory;
 using quanlyxekhach.Models;
 using System;
@@ -10,12 +11,15 @@ namespace quanlyxekhach
     {
         private AccountDao dao;
         private FormController formController;
-
+        private CommandButtonManage enableLogin, disableLogin;
         public Login()
         {
             InitializeComponent();
             CreateAccountDao();
             formController = FormController.getInstance();// gọi simple factory ( ko tạo mới vì đã singleton)
+            enableLogin = new ManageButtonEnable(btnLogin);
+            disableLogin = new ManageButtonDisable(btnLogin);
+            disableLogin.Execute();
         }
 
         public void CreateAccountDao()
@@ -31,11 +35,12 @@ namespace quanlyxekhach
             {
                 txtErrorMess.Text = "Vui lòng điền đầy đủ thông tin";
             }
-            else if (dao.Login(txtUsername.Text.Trim(), txtPassword.Text.Trim()))
+     
+            if (dao.Login(txtUsername.Text.Trim(), txtPassword.Text.Trim()))
             {
                 if (txtUsername.Text.Contains("admin"))
                 {
-                    formController.FormRequest("EMPLOYEE", this); //có chỉnh sửa ở đây :))
+                    formController.FormRequest("ADMIN", this); //có chỉnh sửa ở đây :))
                 }
                 else if (txtUsername.Text.Contains("employee"))
                 {
@@ -49,6 +54,14 @@ namespace quanlyxekhach
             else
             {
                 txtErrorMess.Text = "Sai tên tài khoản hoặc mật khẩu";
+            }
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            if(txtPassword.TextLength>0|| txtUsername.TextLength > 0)
+            {
+                enableLogin.Execute();
             }
         }
 
