@@ -65,7 +65,7 @@ namespace quanlyxekhach.StrateryPattern
 
             bool chValidity = DateTime.TryParseExact(
             text,
-            "MM/dd/yyyy",
+            "dd/MM/yyyy",
             CultureInfo.InvariantCulture,
             DateTimeStyles.None,
             out d);
