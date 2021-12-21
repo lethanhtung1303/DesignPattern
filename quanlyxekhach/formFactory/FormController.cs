@@ -29,9 +29,9 @@ namespace quanlyxekhach.formFactory
         }
 
         // lấy thông tin để chuyển form
-        public void FormRequest(String request, Form formFrom)
+        public void FormRequest(String request, string dataSend, Form formFrom )
         {
-            changeForm.dispatch(request, formFrom);
+            changeForm.dispatch(request, dataSend, formFrom);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace quanlyxekhach.formFactory
         }
 
         // factory
-        public Form getForm(String nameForm)
+        public Form getForm(String nameForm, string dataSend)
         {
             if (nameForm == "EMPLOYEE")
             {
@@ -22,7 +22,7 @@ namespace quanlyxekhach.formFactory
             }
             else if (nameForm == "SELLER")
             {
-                return new ManageCustomer();
+                return new Payment(dataSend);
             }
             else if (nameForm == "ADMIN")
             {
