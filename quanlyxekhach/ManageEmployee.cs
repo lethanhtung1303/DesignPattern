@@ -1,4 +1,5 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.CommandButton;
 using quanlyxekhach.Models;
 using System;
 using System.Data;
@@ -10,9 +11,34 @@ namespace quanlyxekhach
     {
         private EmployeeDAO employeeDAO;
 
+        private CommandButtonManage enablebtnAdd, disablebtnAdd,
+            enablebtnDelete, disablebtnDelete,
+            enablebtnChange, disablebtnChange,
+            enablebtnFind, disablebtnFind,
+            enablebbtnClear, disablebbtnClear;
+
         public ManageEmployee()
         {
             InitializeComponent();
+            CreateAccountDao();
+            enablebtnAdd = new ManageButtonEnable(btnAdd);
+            disablebtnAdd = new ManageButtonDisable(btnAdd);
+
+            enablebtnDelete = new ManageButtonEnable(btnDelete);
+            disablebtnDelete = new ManageButtonDisable(btnDelete);
+
+            enablebtnChange = new ManageButtonEnable(btnChange);
+            disablebtnChange = new ManageButtonDisable(btnChange);
+
+            enablebtnFind = new ManageButtonEnable(btnFind);
+            disablebtnFind = new ManageButtonDisable(btnFind);
+
+            enablebbtnClear = new ManageButtonEnable(bbtnClear);
+            disablebbtnClear = new ManageButtonDisable(bbtnClear);
+        }
+
+        public void CreateAccountDao()
+        {
             AbstractDbFactory sql = SqlFactory.GetInstance();
             employeeDAO = new EmployeeDAO(sql);
         }
@@ -25,11 +51,16 @@ namespace quanlyxekhach
 
         private void ManageEmployee_Load(object sender, EventArgs e)
         {
-            btnAdd.Enabled = true;
-            btnDelete.Enabled = false;
-            btnChange.Enabled = false;
-            btnFind.Enabled = false;
-            bbtnClear.Enabled = true;
+            //btnAdd.Enabled = true;
+            //btnDelete.Enabled = false;
+            //btnChange.Enabled = false;
+            //btnFind.Enabled = false;
+            //bbtnClear.Enabled = true;
+            enablebtnAdd.Execute();
+            disablebtnDelete.Execute();
+            disablebtnChange.Execute();
+            disablebtnFind.Execute();
+            enablebbtnClear.Execute();
             showAll();
         }
 
@@ -62,9 +93,18 @@ namespace quanlyxekhach
                 txtPhoneEmp.Focus();
                 return false;
             }
-            if (!txtPhoneEmp.Validate() || txtPhoneEmp.Text.Length < 10)
+            if (txtPhoneEmp.Text.Length < 10)
             {
                 MessageBox.Show("Số Điện Thoại phải có 10 chữ số!!!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Question);
+                txtPhoneEmp.Focus();
+                return false;
+            }
+            if (!txtPhoneEmp.Validate())
+            {
+                MessageBox.Show("Số Điện Thoại không đúng định dạng!!!",
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Question);
@@ -137,6 +177,41 @@ namespace quanlyxekhach
             return true;
         }
 
+        private void đăngKíToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            this.Hide();
+            register.ShowDialog();
+            this.Show();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void hiênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AccountManagement manage = new AccountManagement();
+            this.Hide();
+            manage.ShowDialog();
+            this.Show();
+        }
+
+        private void cácSảnPhẩmĐãBánToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //ListPhieuVe listPhieuVe = new ListPhieuVe();
+            //listPhieuVe.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Cách ghi dữ liệu đối với các trường:\n Hướng dẫn viên: HDV \n Tài xế: TX \n bán vé và nhân viên văn phòng ghi bình thường ",
+                "Chú thích",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (CheckData())
@@ -182,9 +257,12 @@ namespace quanlyxekhach
             radFemale.Checked = false;
             radMale.Checked = false;
             showAll();
-            btnAdd.Enabled = true;
-            btnDelete.Enabled = false;
-            btnChange.Enabled = false;
+            //btnAdd.Enabled = true;
+            //btnDelete.Enabled = false;
+            //btnChange.Enabled = false;
+            enablebtnAdd.Execute();
+            disablebtnDelete.Execute();
+            disablebtnChange.Execute();
         }
 
         private void bbtnClear_Click(object sender, EventArgs e)
@@ -196,9 +274,12 @@ namespace quanlyxekhach
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnAdd.Enabled = false;
-            btnDelete.Enabled = true;
-            btnChange.Enabled = true;
+            //btnAdd.Enabled = false;
+            //btnDelete.Enabled = true;
+            //btnChange.Enabled = true;
+            disablebtnAdd.Execute();
+            enablebtnDelete.Execute();
+            enablebtnChange.Execute();
             var index = e.RowIndex;
             if (index >= 0)
             {
@@ -294,11 +375,13 @@ namespace quanlyxekhach
             string value = txtFind.Text;
             if (string.IsNullOrEmpty(value))
             {
-                btnFind.Enabled = false;
+                //btnFind.Enabled = false;
+                disablebtnFind.Execute();
             }
             else
             {
-                btnFind.Enabled = true;
+                //btnFind.Enabled = true;
+                enablebtnFind.Execute();
             }
         }
     }

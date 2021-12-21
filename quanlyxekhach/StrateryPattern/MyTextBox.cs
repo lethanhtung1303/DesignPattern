@@ -22,6 +22,9 @@ namespace quanlyxekhach.StrateryPattern
                 case ValidationType.EMAIL:
                     return new EmailValid();
 
+                case ValidationType.PHONE:
+                    return new PhoneValid();
+
                 case ValidationType.DATE:
                     return new DatetimeValid();
 
