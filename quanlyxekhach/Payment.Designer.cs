@@ -355,6 +355,7 @@ namespace quanlyxekhach
             this.txtPhoneNum.Size = new System.Drawing.Size(100, 20);
             this.txtPhoneNum.TabIndex = 52;
             this.txtPhoneNum.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
+            this.txtPhoneNum.TextChanged += new System.EventHandler(this.txtPhoneNum_TextChanged);
             // 
             // txtNameEmp
             // 
@@ -371,6 +372,7 @@ namespace quanlyxekhach
             this.txtCustomerName.Size = new System.Drawing.Size(200, 20);
             this.txtCustomerName.TabIndex = 57;
             this.txtCustomerName.validType = quanlyxekhach.StrateryPattern.ValidationType.STRING;
+            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
             // 
             // txtSit
             // 
@@ -379,6 +381,7 @@ namespace quanlyxekhach
             this.txtSit.Size = new System.Drawing.Size(100, 20);
             this.txtSit.TabIndex = 58;
             this.txtSit.validType = quanlyxekhach.StrateryPattern.ValidationType.STRING;
+            this.txtSit.TextChanged += new System.EventHandler(this.txtSit_TextChanged);
             // 
             // txtCusPay
             // 
@@ -387,6 +390,7 @@ namespace quanlyxekhach
             this.txtCusPay.Size = new System.Drawing.Size(212, 20);
             this.txtCusPay.TabIndex = 59;
             this.txtCusPay.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
+            this.txtCusPay.TextChanged += new System.EventHandler(this.txtCusPay_TextChanged);
             // 
             // Payment
             // 

@@ -195,6 +195,38 @@ namespace quanlyxekhach
 
         }
 
+        private void txtCustomerName_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCustomerName.TextLength >0)
+            {
+                enablePayment.Execute();
+            }
+        }
+
+        private void txtPhoneNum_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNameEmp.TextLength > 0)
+            {
+                enablePayment.Execute();
+            }
+        }
+
+        private void txtSit_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSit.TextLength > 0)
+            {
+                enablePayment.Execute();
+            }
+        }
+
+        private void txtCusPay_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCusPay.TextLength > 0)
+            {
+                enablePayment.Execute();
+            }
+        }
+
         private void thôngTinNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var accountInfo = accountDao.GetAccount(dataInfo);
