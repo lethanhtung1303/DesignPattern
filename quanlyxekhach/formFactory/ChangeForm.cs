@@ -17,12 +17,12 @@ namespace quanlyxekhach.formFactory
         }
 
         // chuyển từ form này qua form khác
-        public void dispatch(String request, Form formFrom)
+        public void dispatch(String request, string dataSend, Form formFrom)
         {
             formFrom.Hide();
             //Factory pattern
-            formFactory.getForm(request).ShowDialog();
-            formFrom.Close();
+            formFactory.getForm(request, dataSend).ShowDialog();
+            formFrom.Show();
         }
     }
 }

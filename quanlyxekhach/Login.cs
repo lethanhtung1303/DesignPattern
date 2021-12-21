@@ -40,15 +40,16 @@ namespace quanlyxekhach
             {
                 if (txtUsername.Text.Contains("admin"))
                 {
-                    formController.FormRequest("ADMIN", this); //có chỉnh sửa ở đây :))
+                    formController.FormRequest("ADMIN",txtUsername.Text, this);
                 }
                 else if (txtUsername.Text.Contains("employee"))
                 {
-                    formController.FormRequest("EMPLOYEE", this);// sử dụng simple factory
+                    formController.FormRequest("EMPLOYEE",txtUsername.Text, this);// sử dụng simple factory
                 }
                 else if (txtUsername.Text.Contains("seller"))
                 {
-                    formController.FormRequest("SELLER", this);
+                    formController.FormRequest("SELLER",txtUsername.Text, this);
+                  
                 }
             }
             else

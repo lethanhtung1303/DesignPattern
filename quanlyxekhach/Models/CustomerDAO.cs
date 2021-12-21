@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -147,6 +148,17 @@ namespace quanlyxekhach.Models
             {
                 return false;
             }
+        }
+        public int Count()
+        {
+            var con = _factory.CreateConnection();
+            con.Open();
+
+            var query = "SELECT Count(*) FROM KhachHang";
+            var cmd = _factory.CreateCommand(query, con);
+            Int32 count = (Int32)(cmd.ExecuteScalar());
+
+            return count;
         }
     }
 }

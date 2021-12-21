@@ -127,5 +127,29 @@ namespace quanlyxekhach.Models
             con.Close();
             return ok;
         }
+
+        public Account GetAccount(string tenTaiKhoan)
+        {
+            var con = factory.CreateConnection();
+            con.Open();
+            var cmd = factory.CreateCommand("Select * from TaiKhoan where TenTK = @TenTK", con);
+            var tenTK = factory.SqlParameter("@TenTK", SqlDbType.Char);
+            tenTK.Value = tenTaiKhoan;
+            cmd.Parameters.Add(tenTK);
+            var adapter = factory.CreateDataAdapter(cmd);
+            var tb = new DataTable();
+            adapter.Fill(tb);
+            var account = new Account();
+            foreach (DataRow dataRow in tb.Rows)
+            {
+                account.stt = Convert.ToInt32(dataRow["stt"]);
+                account.MaNV = dataRow["MaNV"].ToString();
+                account.TenNv = dataRow["TenNV"].ToString();
+                account.ChucVu = dataRow["ChucVu"].ToString();
+                account.TenTK = dataRow["TenTK"].ToString();
+                account.MatKhau = dataRow["MatKhau"].ToString();
+             }
+            return account;
+        }
     }
 }
