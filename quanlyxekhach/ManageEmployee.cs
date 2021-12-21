@@ -93,9 +93,18 @@ namespace quanlyxekhach
                 txtPhoneEmp.Focus();
                 return false;
             }
-            if (!txtPhoneEmp.Validate() || txtPhoneEmp.Text.Length < 10)
+            if (txtPhoneEmp.Text.Length < 10)
             {
                 MessageBox.Show("Số Điện Thoại phải có 10 chữ số!!!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Question);
+                txtPhoneEmp.Focus();
+                return false;
+            }
+            if (!txtPhoneEmp.Validate())
+            {
+                MessageBox.Show("Số Điện Thoại không đúng định dạng!!!",
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Question);

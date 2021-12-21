@@ -111,21 +111,21 @@ namespace quanlyxekhach
             // đăngKíToolStripMenuItem
             // 
             this.đăngKíToolStripMenuItem.Name = "đăngKíToolStripMenuItem";
-            this.đăngKíToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đăngKíToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.đăngKíToolStripMenuItem.Text = "Đăng kí";
             this.đăngKíToolStripMenuItem.Click += new System.EventHandler(this.đăngKíToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // hiênToolStripMenuItem
             // 
             this.hiênToolStripMenuItem.Name = "hiênToolStripMenuItem";
-            this.hiênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hiênToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.hiênToolStripMenuItem.Text = "Hiển thị thông tin ";
             this.hiênToolStripMenuItem.Click += new System.EventHandler(this.hiênToolStripMenuItem_Click);
             // 
@@ -214,7 +214,7 @@ namespace quanlyxekhach
             this.txtPhoneEmp.Name = "txtPhoneEmp";
             this.txtPhoneEmp.Size = new System.Drawing.Size(199, 20);
             this.txtPhoneEmp.TabIndex = 27;
-            this.txtPhoneEmp.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
+            this.txtPhoneEmp.validType = quanlyxekhach.StrateryPattern.ValidationType.PHONE;
             // 
             // txtNameE
             // 

@@ -55,12 +55,12 @@ namespace quanlyxekhach
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtFind = new quanlyxekhach.StrateryPattern.MyTextBox();
             this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtFind = new quanlyxekhach.StrateryPattern.MyTextBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,20 +76,21 @@ namespace quanlyxekhach
             this.thôngTinTàiKhoảnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // quảnLýKháchHàngToolStripMenuItem
             // 
             this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
-            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
+            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
             this.quảnLýKháchHàngToolStripMenuItem.Text = "Quản lý khách hàng ";
             // 
             // QLTTCDToolStripMenuItem
             // 
             this.QLTTCDToolStripMenuItem.Name = "QLTTCDToolStripMenuItem";
-            this.QLTTCDToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
+            this.QLTTCDToolStripMenuItem.Size = new System.Drawing.Size(167, 20);
             this.QLTTCDToolStripMenuItem.Text = "Quản lý thông tin chuyến đi";
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
@@ -98,27 +99,26 @@ namespace quanlyxekhach
             this.thôngTinNgườiDùngToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             // 
             // thôngTinNgườiDùngToolStripMenuItem
             // 
             this.thôngTinNgườiDùngToolStripMenuItem.Name = "thôngTinNgườiDùngToolStripMenuItem";
-            this.thôngTinNgườiDùngToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.thôngTinNgườiDùngToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.thôngTinNgườiDùngToolStripMenuItem.Text = "Thông tin người dùng";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(395, 58);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFind.Location = new System.Drawing.Point(296, 47);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(100, 28);
+            this.btnFind.Size = new System.Drawing.Size(75, 23);
             this.btnFind.TabIndex = 17;
             this.btnFind.Text = "tìm kiếm ";
             this.btnFind.UseVisualStyleBackColor = true;
@@ -127,10 +127,9 @@ namespace quanlyxekhach
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 64);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(27, 52);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(181, 17);
+            this.label5.Size = new System.Drawing.Size(138, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "nhập thông tin  khách hàng";
             // 
@@ -151,34 +150,36 @@ namespace quanlyxekhach
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(557, 97);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(418, 79);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(493, 379);
+            this.panel2.Size = new System.Drawing.Size(370, 308);
             this.panel2.TabIndex = 14;
             // 
             // txtCustomerPhoneNum
             // 
-            this.txtCustomerPhoneNum.Location = new System.Drawing.Point(145, 129);
+            this.txtCustomerPhoneNum.Location = new System.Drawing.Point(109, 105);
+            this.txtCustomerPhoneNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCustomerPhoneNum.Name = "txtCustomerPhoneNum";
-            this.txtCustomerPhoneNum.Size = new System.Drawing.Size(262, 22);
+            this.txtCustomerPhoneNum.Size = new System.Drawing.Size(198, 20);
             this.txtCustomerPhoneNum.TabIndex = 21;
-            this.txtCustomerPhoneNum.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
+            this.txtCustomerPhoneNum.validType = quanlyxekhach.StrateryPattern.ValidationType.PHONE;
             // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(143, 81);
+            this.txtCustomerName.Location = new System.Drawing.Point(107, 66);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(264, 22);
+            this.txtCustomerName.Size = new System.Drawing.Size(199, 20);
             this.txtCustomerName.TabIndex = 20;
             this.txtCustomerName.validType = quanlyxekhach.StrateryPattern.ValidationType.STRING;
             // 
             // txtMaKh
             // 
-            this.txtMaKh.Location = new System.Drawing.Point(141, 40);
+            this.txtMaKh.Location = new System.Drawing.Point(106, 32);
+            this.txtMaKh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMaKh.Name = "txtMaKh";
             this.txtMaKh.ReadOnly = true;
-            this.txtMaKh.Size = new System.Drawing.Size(264, 22);
+            this.txtMaKh.Size = new System.Drawing.Size(199, 20);
             this.txtMaKh.TabIndex = 19;
             this.txtMaKh.validType = quanlyxekhach.StrateryPattern.ValidationType.STRING;
             // 
@@ -186,10 +187,9 @@ namespace quanlyxekhach
             // 
             this.txtStt.AutoSize = true;
             this.txtStt.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtStt.Location = new System.Drawing.Point(427, 34);
-            this.txtStt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtStt.Location = new System.Drawing.Point(320, 28);
             this.txtStt.Name = "txtStt";
-            this.txtStt.Size = new System.Drawing.Size(38, 17);
+            this.txtStt.Size = new System.Drawing.Size(29, 13);
             this.txtStt.TabIndex = 18;
             this.txtStt.Text = "label";
             // 
@@ -197,18 +197,16 @@ namespace quanlyxekhach
             // 
             this.txtTenTK.AutoSize = true;
             this.txtTenTK.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtTenTK.Location = new System.Drawing.Point(48, 17);
-            this.txtTenTK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtTenTK.Location = new System.Drawing.Point(36, 14);
             this.txtTenTK.Name = "txtTenTK";
-            this.txtTenTK.Size = new System.Drawing.Size(0, 17);
+            this.txtTenTK.Size = new System.Drawing.Size(0, 13);
             this.txtTenTK.TabIndex = 17;
             // 
             // btnDeleteTextBox
             // 
-            this.btnDeleteTextBox.Location = new System.Drawing.Point(184, 300);
-            this.btnDeleteTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteTextBox.Location = new System.Drawing.Point(138, 244);
             this.btnDeleteTextBox.Name = "btnDeleteTextBox";
-            this.btnDeleteTextBox.Size = new System.Drawing.Size(137, 28);
+            this.btnDeleteTextBox.Size = new System.Drawing.Size(103, 23);
             this.btnDeleteTextBox.TabIndex = 10;
             this.btnDeleteTextBox.Text = "xóa dữ liệu textbox";
             this.btnDeleteTextBox.UseVisualStyleBackColor = true;
@@ -217,19 +215,17 @@ namespace quanlyxekhach
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(24, 43);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(18, 35);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(105, 17);
+            this.label11.Size = new System.Drawing.Size(82, 13);
             this.label11.TabIndex = 16;
             this.label11.Text = "Mã khách hàng";
             // 
             // btnChange
             // 
-            this.btnChange.Location = new System.Drawing.Point(83, 238);
-            this.btnChange.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChange.Location = new System.Drawing.Point(62, 193);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(100, 28);
+            this.btnChange.Size = new System.Drawing.Size(75, 23);
             this.btnChange.TabIndex = 8;
             this.btnChange.Text = "Sửa";
             this.btnChange.UseVisualStyleBackColor = true;
@@ -237,10 +233,9 @@ namespace quanlyxekhach
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(307, 238);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Location = new System.Drawing.Point(230, 193);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 28);
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -249,10 +244,9 @@ namespace quanlyxekhach
             // radFemaleCus
             // 
             this.radFemaleCus.AutoSize = true;
-            this.radFemaleCus.Location = new System.Drawing.Point(293, 174);
-            this.radFemaleCus.Margin = new System.Windows.Forms.Padding(4);
+            this.radFemaleCus.Location = new System.Drawing.Point(220, 141);
             this.radFemaleCus.Name = "radFemaleCus";
-            this.radFemaleCus.Size = new System.Drawing.Size(47, 21);
+            this.radFemaleCus.Size = new System.Drawing.Size(39, 17);
             this.radFemaleCus.TabIndex = 5;
             this.radFemaleCus.TabStop = true;
             this.radFemaleCus.Text = "Nữ";
@@ -261,10 +255,9 @@ namespace quanlyxekhach
             // radMaleCus
             // 
             this.radMaleCus.AutoSize = true;
-            this.radMaleCus.Location = new System.Drawing.Point(140, 176);
-            this.radMaleCus.Margin = new System.Windows.Forms.Padding(4);
+            this.radMaleCus.Location = new System.Drawing.Point(105, 143);
             this.radMaleCus.Name = "radMaleCus";
-            this.radMaleCus.Size = new System.Drawing.Size(62, 21);
+            this.radMaleCus.Size = new System.Drawing.Size(50, 17);
             this.radMaleCus.TabIndex = 4;
             this.radMaleCus.TabStop = true;
             this.radMaleCus.Text = "Nam ";
@@ -273,30 +266,27 @@ namespace quanlyxekhach
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 178);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(18, 145);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Giới tính";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 132);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(18, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 17);
+            this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Số điện thoại";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 84);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(18, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Họ và tên ";
             // 
@@ -304,20 +294,18 @@ namespace quanlyxekhach
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(164, 1);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(123, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 17);
+            this.label1.Size = new System.Drawing.Size(136, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Thông tin  khách hàng";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(16, 97);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(12, 79);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(524, 446);
+            this.panel1.Size = new System.Drawing.Size(393, 362);
             this.panel1.TabIndex = 13;
             // 
             // dataGridView1
@@ -329,22 +317,12 @@ namespace quanlyxekhach
             this.TenKH,
             this.Sdt,
             this.GioiTinh});
-            this.dataGridView1.Location = new System.Drawing.Point(24, 4);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(481, 404);
+            this.dataGridView1.Size = new System.Drawing.Size(361, 328);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // txtFind
-            // 
-            this.txtFind.Location = new System.Drawing.Point(224, 61);
-            this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(163, 22);
-            this.txtFind.TabIndex = 19;
-            this.txtFind.validType = quanlyxekhach.StrateryPattern.ValidationType.STRING;
-            this.txtFind.TextChanged += new System.EventHandler(this.txtFind_TextChanged);
             // 
             // stt
             // 
@@ -386,18 +364,27 @@ namespace quanlyxekhach
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.Width = 125;
             // 
+            // txtFind
+            // 
+            this.txtFind.Location = new System.Drawing.Point(168, 50);
+            this.txtFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(123, 20);
+            this.txtFind.TabIndex = 19;
+            this.txtFind.validType = quanlyxekhach.StrateryPattern.ValidationType.STRING;
+            this.txtFind.TextChanged += new System.EventHandler(this.txtFind_TextChanged);
+            // 
             // ManageCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtFind);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageCustomer";
             this.Text = "ManageCustomer";
             this.Load += new System.EventHandler(this.ManageCustomer_Load);

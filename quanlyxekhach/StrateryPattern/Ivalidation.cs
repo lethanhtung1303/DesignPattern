@@ -14,7 +14,8 @@ namespace quanlyxekhach.StrateryPattern
         FLOAT,
         STRING,
         EMAIL,
-        DATE
+        DATE,
+        PHONE
     }
 
     internal interface Ivalidation
@@ -53,6 +54,23 @@ namespace quanlyxekhach.StrateryPattern
             else
             {
                 return false;
+            }
+        }
+    }
+
+    internal class PhoneValid : Ivalidation
+    {
+        public bool valid(string text)
+        {
+            string regex = @"(84|0[3|5|7|8|9])+([0-9]{8})\b";
+
+            if (!Regex.IsMatch(text, regex))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }
