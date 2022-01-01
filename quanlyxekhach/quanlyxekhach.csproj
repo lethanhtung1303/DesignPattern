@@ -73,6 +73,12 @@
     <Compile Include="ManageEmployee.Designer.cs">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageInfoTrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageInfoTrip.Designer.cs">
+      <DependentUpon>ManageInfoTrip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountDao.cs" />
     <Compile Include="AbstractModel\SqlFactory.cs" />
@@ -86,6 +92,8 @@
     <Compile Include="Models\CustomerDAO.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeDAO.cs" />
+    <Compile Include="Models\InfoTrip.cs" />
+    <Compile Include="Models\InfoTripDAO.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\LocationDao.cs" />
     <Compile Include="Models\Temp.cs" />
@@ -120,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageEmployee.resx">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageInfoTrip.resx">
+      <DependentUpon>ManageInfoTrip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
