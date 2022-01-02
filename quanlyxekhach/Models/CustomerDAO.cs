@@ -83,7 +83,6 @@ namespace quanlyxekhach.Models
             }
             catch (Exception)
             {
-                Debug.WriteLine("vao exxcep");
                 return false;
             }
         }
