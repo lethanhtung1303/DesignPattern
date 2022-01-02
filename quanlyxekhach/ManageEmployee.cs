@@ -15,7 +15,7 @@ namespace quanlyxekhach
             enablebtnDelete, disablebtnDelete,
             enablebtnChange, disablebtnChange,
             enablebtnFind, disablebtnFind,
-            enablebbtnClear, disablebbtnClear;
+            enablebbtnClear;
 
         public ManageEmployee()
         {
@@ -34,7 +34,6 @@ namespace quanlyxekhach
             disablebtnFind = new ManageButtonDisable(btnFind);
 
             enablebbtnClear = new ManageButtonEnable(bbtnClear);
-            disablebbtnClear = new ManageButtonDisable(bbtnClear);
         }
 
         public void CreateAccountDao()

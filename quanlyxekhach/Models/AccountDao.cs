@@ -47,19 +47,19 @@ namespace quanlyxekhach.Models
             var tb = new DataTable();
             var ListAcc = new List<Account>();
             adapter.Fill(tb);
-            /*   foreach (DataRow dataRow in tb.Rows)
-               {
-                   var acc = new Account
-                   {
-                       stt = Convert.ToInt32(dataRow["stt"]),
-                       MaNV = dataRow["MaNV"].ToString(),
-                       TenNv = dataRow["TenNV"].ToString(),
-                       ChucVu = dataRow["ChucVu"].ToString(),
-                       TenTK = dataRow["TenTK"].ToString(),
-                       MatKhau = dataRow["MatKhau"].ToString()
-                   };
-                   ListAcc.Add(acc);
-               }*/
+            //foreach (DataRow dataRow in tb.Rows)
+            //{
+            //    var acc = new Account
+            //    {
+            //        stt = Convert.ToInt32(dataRow["stt"]),
+            //        MaNV = dataRow["MaNV"].ToString(),
+            //        TenNv = dataRow["TenNV"].ToString(),
+            //        ChucVu = dataRow["ChucVu"].ToString(),
+            //        TenTK = dataRow["TenTK"].ToString(),
+            //        MatKhau = dataRow["MatKhau"].ToString()
+            //    };
+            //    ListAcc.Add(acc);
+            //}
             con.Close();
             return tb;
         }

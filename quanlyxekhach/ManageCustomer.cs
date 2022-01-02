@@ -1,4 +1,5 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.CommandButton;
 using quanlyxekhach.Models;
 using System;
 using System.Data;
@@ -11,11 +12,24 @@ namespace quanlyxekhach
         private CustomerDAO customerDAO;
         private string maKH;
 
+        private CommandButtonManage enablebtnDelete, disablebtnDelete,
+            enablebtnChange, disablebtnChange,
+            enablebtnFind, disablebtnFind;
+
         public ManageCustomer()
         {
             InitializeComponent();
             AbstractDbFactory sql = SqlFactory.GetInstance();
             customerDAO = new CustomerDAO(sql);
+
+            enablebtnDelete = new ManageButtonEnable(btnDelete);
+            disablebtnDelete = new ManageButtonDisable(btnDelete);
+
+            enablebtnChange = new ManageButtonEnable(btnChange);
+            disablebtnChange = new ManageButtonDisable(btnChange);
+
+            enablebtnFind = new ManageButtonEnable(btnFind);
+            disablebtnFind = new ManageButtonDisable(btnFind);
         }
 
         public void showAll()
@@ -26,18 +40,24 @@ namespace quanlyxekhach
 
         private void ManageCustomer_Load(object sender, System.EventArgs e)
         {
-            btnFind.Enabled = false;
-            btnChange.Enabled = false;
-            btnDelete.Enabled = false;
-            btnDeleteTextBox.Enabled = false;
+            //btnFind.Enabled = false;
+            //btnChange.Enabled = false;
+            //btnDelete.Enabled = false;
+            //btnDeleteTextBox.Enabled = false;
+            disablebtnFind.Execute();
+            disablebtnChange.Execute();
+            disablebtnDelete.Execute();
             showAll();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnChange.Enabled = true;
-            btnDelete.Enabled = true;
-            btnDeleteTextBox.Enabled = true;
+            //btnChange.Enabled = true;
+            //btnDelete.Enabled = true;
+            //btnDeleteTextBox.Enabled = true;
+            enablebtnChange.Execute();
+            enablebtnDelete.Execute();
+
             var index = e.RowIndex;
             if (index >= 0)
             {
@@ -72,11 +92,13 @@ namespace quanlyxekhach
             string value = txtFind.Text;
             if (string.IsNullOrEmpty(value))
             {
-                btnFind.Enabled = false;
+                //btnFind.Enabled = false;
+                disablebtnFind.Execute();
             }
             else
             {
-                btnFind.Enabled = true;
+                //btnFind.Enabled = true;
+                enablebtnFind.Execute();
             }
         }
 
