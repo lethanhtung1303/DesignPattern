@@ -133,13 +133,15 @@ Insert into XeKhach(MaXe) values('XK2')
 Insert into XeKhach(MaXe) values('XK3')
 Insert into XeKhach(MaXe) values('XK4')
 
-select * from PhieuVe
+
 
 delete from KhachHang where MaKH='KH4'
 
 select * from KhachHang
+select * from PhieuVe
+
 insert into KhachHang values('KH1','Trần Thành Tâm' ,'823743','1')
 
 
-delete from PhieuVe 
+
 insert into PhieuVe values ('MP1','KH1','Trần Thành Tâm','NV1','Ngô Hồng Xinh',3000000,'ghe 34','XK1','05-05-2020','TPHCM- Cố Đô Huế')
