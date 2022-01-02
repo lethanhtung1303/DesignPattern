@@ -30,10 +30,15 @@ namespace quanlyxekhach
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.radFemaleCus = new System.Windows.Forms.RadioButton();
+            this.radMaleCus = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtIdEmp = new System.Windows.Forms.Label();
             this.dtTimeStart = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.cbLocation = new System.Windows.Forms.ComboBox();
+            this.txtNameEmp = new System.Windows.Forms.TextBox();
             this.lbMessage = new System.Windows.Forms.Label();
             this.cbCost = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,15 +57,10 @@ namespace quanlyxekhach
             this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinNgườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radFemaleCus = new System.Windows.Forms.RadioButton();
-            this.radMaleCus = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtPhoneNum = new quanlyxekhach.StrateryPattern.MyTextBox();
-            this.txtNameEmp = new System.Windows.Forms.TextBox();
-            this.txtCustomerName = new quanlyxekhach.StrateryPattern.MyTextBox();
-            this.txtSit = new quanlyxekhach.StrateryPattern.MyTextBox();
             this.txtCusPay = new quanlyxekhach.StrateryPattern.MyTextBox();
+            this.txtSit = new quanlyxekhach.StrateryPattern.MyTextBox();
+            this.txtCustomerName = new quanlyxekhach.StrateryPattern.MyTextBox();
+            this.txtPhoneNum = new quanlyxekhach.StrateryPattern.MyTextBox();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +100,49 @@ namespace quanlyxekhach
             this.panel2.Size = new System.Drawing.Size(652, 363);
             this.panel2.TabIndex = 11;
             // 
+            // radFemaleCus
+            // 
+            this.radFemaleCus.AutoSize = true;
+            this.radFemaleCus.Location = new System.Drawing.Point(567, 53);
+            this.radFemaleCus.Name = "radFemaleCus";
+            this.radFemaleCus.Size = new System.Drawing.Size(39, 17);
+            this.radFemaleCus.TabIndex = 55;
+            this.radFemaleCus.TabStop = true;
+            this.radFemaleCus.Text = "Nữ";
+            this.radFemaleCus.UseVisualStyleBackColor = true;
+            // 
+            // radMaleCus
+            // 
+            this.radMaleCus.AutoSize = true;
+            this.radMaleCus.Location = new System.Drawing.Point(567, 30);
+            this.radMaleCus.Name = "radMaleCus";
+            this.radMaleCus.Size = new System.Drawing.Size(50, 17);
+            this.radMaleCus.TabIndex = 54;
+            this.radMaleCus.TabStop = true;
+            this.radMaleCus.Text = "Nam ";
+            this.radMaleCus.UseVisualStyleBackColor = true;
+            this.radMaleCus.CheckedChanged += new System.EventHandler(this.radMaleCus_CheckedChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(501, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 56;
+            this.label7.Text = "Giới tính";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(357, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 53;
+            this.label2.Text = "SĐT";
+            // 
             // txtIdEmp
             // 
             this.txtIdEmp.AutoSize = true;
@@ -134,6 +177,14 @@ namespace quanlyxekhach
             this.cbLocation.Name = "cbLocation";
             this.cbLocation.Size = new System.Drawing.Size(231, 21);
             this.cbLocation.TabIndex = 42;
+            // 
+            // txtNameEmp
+            // 
+            this.txtNameEmp.Enabled = false;
+            this.txtNameEmp.Location = new System.Drawing.Point(158, 107);
+            this.txtNameEmp.Name = "txtNameEmp";
+            this.txtNameEmp.Size = new System.Drawing.Size(231, 20);
+            this.txtNameEmp.TabIndex = 41;
             // 
             // lbMessage
             // 
@@ -305,74 +356,14 @@ namespace quanlyxekhach
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
-            // label2
+            // txtCusPay
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(357, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 53;
-            this.label2.Text = "SĐT";
-            // 
-            // radFemaleCus
-            // 
-            this.radFemaleCus.AutoSize = true;
-            this.radFemaleCus.Location = new System.Drawing.Point(567, 53);
-            this.radFemaleCus.Name = "radFemaleCus";
-            this.radFemaleCus.Size = new System.Drawing.Size(39, 17);
-            this.radFemaleCus.TabIndex = 55;
-            this.radFemaleCus.TabStop = true;
-            this.radFemaleCus.Text = "Nữ";
-            this.radFemaleCus.UseVisualStyleBackColor = true;
-            // 
-            // radMaleCus
-            // 
-            this.radMaleCus.AutoSize = true;
-            this.radMaleCus.Location = new System.Drawing.Point(567, 30);
-            this.radMaleCus.Name = "radMaleCus";
-            this.radMaleCus.Size = new System.Drawing.Size(50, 17);
-            this.radMaleCus.TabIndex = 54;
-            this.radMaleCus.TabStop = true;
-            this.radMaleCus.Text = "Nam ";
-            this.radMaleCus.UseVisualStyleBackColor = true;
-            this.radMaleCus.CheckedChanged += new System.EventHandler(this.radMaleCus_CheckedChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(501, 46);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 56;
-            this.label7.Text = "Giới tính";
-            // 
-            // txtPhoneNum
-            // 
-            this.txtPhoneNum.Location = new System.Drawing.Point(395, 43);
-            this.txtPhoneNum.Name = "txtPhoneNum";
-            this.txtPhoneNum.Size = new System.Drawing.Size(100, 20);
-            this.txtPhoneNum.TabIndex = 52;
-            this.txtPhoneNum.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
-            this.txtPhoneNum.TextChanged += new System.EventHandler(this.txtPhoneNum_TextChanged);
-            // 
-            // txtNameEmp
-            // 
-            this.txtNameEmp.Enabled = false;
-            this.txtNameEmp.Location = new System.Drawing.Point(158, 107);
-            this.txtNameEmp.Name = "txtNameEmp";
-            this.txtNameEmp.Size = new System.Drawing.Size(231, 20);
-            this.txtNameEmp.TabIndex = 41;
-            // 
-            // txtCustomerName
-            // 
-            this.txtCustomerName.Location = new System.Drawing.Point(158, 39);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(200, 20);
-            this.txtCustomerName.TabIndex = 57;
-            this.txtCustomerName.validType = quanlyxekhach.StrateryPattern.ValidationType.STRING;
-            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
+            this.txtCusPay.Location = new System.Drawing.Point(210, 287);
+            this.txtCusPay.Name = "txtCusPay";
+            this.txtCusPay.Size = new System.Drawing.Size(212, 20);
+            this.txtCusPay.TabIndex = 59;
+            this.txtCusPay.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
+            this.txtCusPay.TextChanged += new System.EventHandler(this.txtCusPay_TextChanged);
             // 
             // txtSit
             // 
@@ -383,14 +374,23 @@ namespace quanlyxekhach
             this.txtSit.validType = quanlyxekhach.StrateryPattern.ValidationType.STRING;
             this.txtSit.TextChanged += new System.EventHandler(this.txtSit_TextChanged);
             // 
-            // txtCusPay
+            // txtCustomerName
             // 
-            this.txtCusPay.Location = new System.Drawing.Point(210, 287);
-            this.txtCusPay.Name = "txtCusPay";
-            this.txtCusPay.Size = new System.Drawing.Size(212, 20);
-            this.txtCusPay.TabIndex = 59;
-            this.txtCusPay.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
-            this.txtCusPay.TextChanged += new System.EventHandler(this.txtCusPay_TextChanged);
+            this.txtCustomerName.Location = new System.Drawing.Point(158, 39);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(200, 20);
+            this.txtCustomerName.TabIndex = 57;
+            this.txtCustomerName.validType = quanlyxekhach.StrateryPattern.ValidationType.STRING;
+            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
+            // 
+            // txtPhoneNum
+            // 
+            this.txtPhoneNum.Location = new System.Drawing.Point(395, 43);
+            this.txtPhoneNum.Name = "txtPhoneNum";
+            this.txtPhoneNum.Size = new System.Drawing.Size(100, 20);
+            this.txtPhoneNum.TabIndex = 52;
+            this.txtPhoneNum.validType = quanlyxekhach.StrateryPattern.ValidationType.PHONE;
+            this.txtPhoneNum.TextChanged += new System.EventHandler(this.txtPhoneNum_TextChanged);
             // 
             // Payment
             // 

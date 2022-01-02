@@ -237,7 +237,7 @@ namespace quanlyxekhach.Models
             return listLocation;
         }
 
-        public List<Temp> GetAllVehicle()
+        public List<Vehicle> GetAllVehicle()
         {
             var con = _factory.CreateConnection();
             con.Open();
@@ -246,11 +246,11 @@ namespace quanlyxekhach.Models
             var cmd = _factory.CreateCommand(query, con);
             var adapter = _factory.CreateDataAdapter(cmd);
             var tb = new DataTable();
-            var listVehicle = new List<Temp>();
+            var listVehicle = new List<Vehicle>();
             adapter.Fill(tb);
             foreach (DataRow dataRow in tb.Rows)
             {
-                Temp vehicle = new Temp
+                Vehicle vehicle = new Vehicle
                 {
                     stt = Convert.ToInt32(dataRow["stt"]),
                     MaXe = Convert.ToString(dataRow["MaXe"]), 

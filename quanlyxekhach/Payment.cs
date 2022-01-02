@@ -69,6 +69,7 @@ namespace quanlyxekhach
                 txtCustomerName.Focus();
                 return false;
             }
+
             if (string.IsNullOrEmpty(txtPhoneNum.Text))
             {
                 MessageBox.Show("Vui lòng nhập Số điện thoại!!!",
@@ -78,15 +79,25 @@ namespace quanlyxekhach
                 txtPhoneNum.Focus();
                 return false;
             }
-         /*   if (!txtCustomerPhoneNum.Validate() || txtCustomerPhoneNum.Text.Length < 10)
+            if (txtPhoneNum.Text.Length < 10)
             {
                 MessageBox.Show("Số Điện Thoại phải có 10 chữ số!!!",
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Question);
-                txtCustomerPhoneNum.Focus();
+                txtPhoneNum.Focus();
                 return false;
-            }*/// phần này cần valid lại
+            }
+            if (!txtPhoneNum.Validate())
+            {
+                MessageBox.Show("Số Điện Thoại không đúng định dạng!!!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Question);
+                txtPhoneNum.Focus();
+                return false;
+            }
+
             if (!radMaleCus.Checked && !radFemaleCus.Checked)
             {
                 MessageBox.Show("Vui lòng chọn Giới Tính!!!",
@@ -149,12 +160,24 @@ namespace quanlyxekhach
 
             return true;
         }
+        private void ClearData()
+        {
+            txtCustomerName.Text = "";
+            txtPhoneNum.Text = "";
+            txtNameEmp.Text = "";
+            txtCusPay.Text = "";
+            txtSit.Text = "";
+            cbCost.SelectedIndex = -1;
+            cbIDveh.SelectedIndex = -1;
+            cbLocation.SelectedIndex = -1;
+            dtTimeStart.Value = DateTime.Now;
+        }
         private void btnPayment_Click(object sender, System.EventArgs e)
         {
             if(checkData())
             {
-                var toTalCustomer = customerDao.Count();
-                var totalTicket = ticketDao.Count();
+                var toTalCustomer = customerDao.Maxstt();
+                var totalTicket = ticketDao.MaxStt();
                 Customer customer = new Customer();
 
                 customer.maKH = "KH" + Convert.ToString(toTalCustomer + 1);
@@ -179,10 +202,16 @@ namespace quanlyxekhach
                         MaChuyenxe = cbIDveh.Text,
                         TenDD = cbLocation.Text
                     };
+
                     var addTicket = ticketDao.Add(ticket);
                     if (addTicket)
                     {
                         MessageBox.Show("Mua vé thành công");
+                        ClearData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi xảy ra");
                     }
                 }
                 

@@ -16,8 +16,9 @@ namespace quanlyxekhach
     public partial class ManageInfoTrip : Form
     {
         private InfoTripDAO infoTripDAO;
+        private AccountDao accountDao;
         private string maChuyen;
-
+        private string dataInfo;
         private CommandButtonManage enablebtnFind, disablebtnFind,
             enablebtnChange, disablebtnChange,
             enablebtnUpdate, disablebtnUpdate;
@@ -75,13 +76,13 @@ namespace quanlyxekhach
 
         public void ClearData()
         {
-            cbIdDriver.Text = "";
-            cbNameDriver.Text = "";
-            cbIdTG.Text = "";
-            cbNameTG.Text = "";
-            cbIdVeh.Text = "";
-            cbNameDriver.Text = "";
-            cbNameLocation.Text = "";
+            cbIdDriver.SelectedIndex = -1;
+            cbNameDriver.SelectedIndex = -1;
+            cbIdTG.SelectedIndex = -1;
+            cbNameTG.SelectedIndex = -1;
+            cbIdVeh.SelectedIndex = -1;
+            cbNameDriver.SelectedIndex = -1;
+            cbNameLocation.SelectedIndex = -1;
             dtstar.Value = DateTime.Now;
             dtEnd.Value = DateTime.Now;
             disablebtnUpdate.Execute();
@@ -185,6 +186,12 @@ namespace quanlyxekhach
             }
         }
 
+        private void thôngTinNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var accountInfo = accountDao.GetAccount(dataInfo);
+            MessageBox.Show("Tên người dùng: " + accountInfo.TenNv + "\nChức vụ: " + accountInfo.ChucVu + "\nTên tài khoản: " + accountInfo.TenTK);
+        }
+
         private void txtFind_TextChanged(object sender, EventArgs e)
         {
             if (txtFind.Text == "")
@@ -215,11 +222,13 @@ namespace quanlyxekhach
             showAll();
         }
 
-        public ManageInfoTrip()
+        public ManageInfoTrip(string dataSend)
         {
             InitializeComponent();
             AbstractDbFactory sql = SqlFactory.GetInstance();
             infoTripDAO = new InfoTripDAO(sql);
+            accountDao = new AccountDao(sql);
+            dataInfo = dataSend;
 
             enablebtnChange = new ManageButtonEnable(btnChange);
             disablebtnChange = new ManageButtonDisable(btnChange);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace quanlyxekhach.Models
 {
-    class Temp
+    class Vehicle
     {
         public int stt { get; set; }
         public string MaXe { get; set; }

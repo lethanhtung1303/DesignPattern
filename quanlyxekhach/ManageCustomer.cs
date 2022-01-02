@@ -1,26 +1,33 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
+using quanlyxekhach.formFactory;
 using quanlyxekhach.Models;
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace quanlyxekhach
 {
     public partial class ManageCustomer : Form
     {
-        private CustomerDAO customerDAO;
+        private string dataInfo;
         private string maKH;
-
+        private FormController formController;
+        private CustomerDAO customerDAO;
+        private AccountDao accountDao;
         private CommandButtonManage enablebtnDelete, disablebtnDelete,
             enablebtnChange, disablebtnChange,
             enablebtnFind, disablebtnFind;
 
-        public ManageCustomer()
+        public ManageCustomer(string dataSend)
         {
             InitializeComponent();
+            formController = FormController.getInstance();
             AbstractDbFactory sql = SqlFactory.GetInstance();
             customerDAO = new CustomerDAO(sql);
+            accountDao = new AccountDao(sql);
+            dataInfo = dataSend;
 
             enablebtnDelete = new ManageButtonEnable(btnDelete);
             disablebtnDelete = new ManageButtonDisable(btnDelete);
@@ -85,6 +92,24 @@ namespace quanlyxekhach
             {
                 showAll();
             }
+        }
+
+        private void QLTTCDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var accountInfo = accountDao.GetAccount(dataInfo);
+            formController.FormRequest("EMPLOYEE_INFO_TRIP", accountInfo.TenTK, this);
+        }
+
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thôngTinNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Debug.WriteLine(dataInfo);
+            var accountInfo = accountDao.GetAccount(dataInfo);
+            MessageBox.Show("Tên người dùng: " + accountInfo.TenNv + "\nChức vụ: " + accountInfo.ChucVu + "\nTên tài khoản: " + accountInfo.TenTK);
         }
 
         private void txtFind_TextChanged(object sender, EventArgs e)

@@ -92,6 +92,7 @@ namespace quanlyxekhach
             this.QLTTCDToolStripMenuItem.Name = "QLTTCDToolStripMenuItem";
             this.QLTTCDToolStripMenuItem.Size = new System.Drawing.Size(167, 20);
             this.QLTTCDToolStripMenuItem.Text = "Quản lý thông tin chuyến đi";
+            this.QLTTCDToolStripMenuItem.Click += new System.EventHandler(this.QLTTCDToolStripMenuItem_Click);
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
@@ -101,12 +102,14 @@ namespace quanlyxekhach
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
             this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
+            this.thôngTinTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.thôngTinTàiKhoảnToolStripMenuItem_Click);
             // 
             // thôngTinNgườiDùngToolStripMenuItem
             // 
             this.thôngTinNgườiDùngToolStripMenuItem.Name = "thôngTinNgườiDùngToolStripMenuItem";
             this.thôngTinNgườiDùngToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.thôngTinNgườiDùngToolStripMenuItem.Text = "Thông tin người dùng";
+            this.thôngTinNgườiDùngToolStripMenuItem.Click += new System.EventHandler(this.thôngTinNgườiDùngToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
@@ -158,7 +161,7 @@ namespace quanlyxekhach
             // txtCustomerPhoneNum
             // 
             this.txtCustomerPhoneNum.Location = new System.Drawing.Point(109, 105);
-            this.txtCustomerPhoneNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCustomerPhoneNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustomerPhoneNum.Name = "txtCustomerPhoneNum";
             this.txtCustomerPhoneNum.Size = new System.Drawing.Size(198, 20);
             this.txtCustomerPhoneNum.TabIndex = 21;
@@ -167,7 +170,7 @@ namespace quanlyxekhach
             // txtCustomerName
             // 
             this.txtCustomerName.Location = new System.Drawing.Point(107, 66);
-            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(199, 20);
             this.txtCustomerName.TabIndex = 20;
@@ -176,7 +179,7 @@ namespace quanlyxekhach
             // txtMaKh
             // 
             this.txtMaKh.Location = new System.Drawing.Point(106, 32);
-            this.txtMaKh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaKh.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaKh.Name = "txtMaKh";
             this.txtMaKh.ReadOnly = true;
             this.txtMaKh.Size = new System.Drawing.Size(199, 20);
@@ -367,7 +370,7 @@ namespace quanlyxekhach
             // txtFind
             // 
             this.txtFind.Location = new System.Drawing.Point(168, 50);
-            this.txtFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFind.Margin = new System.Windows.Forms.Padding(2);
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(123, 20);
             this.txtFind.TabIndex = 19;

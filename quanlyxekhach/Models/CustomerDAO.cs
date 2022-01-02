@@ -66,7 +66,7 @@ namespace quanlyxekhach.Models
                 var TenKH = _factory.SqlParameter("@TenKH", SqlDbType.NVarChar);
                 var Sdt = _factory.SqlParameter("@Sdt", SqlDbType.Char);
                 var GioiTinh = _factory.SqlParameter("@GioiTinh", SqlDbType.Bit);
-
+                Debug.WriteLine(customer.maKH + " "+ customer.tenKH + " " + customer.sdt + " " + customer.gioiTinh );
                 MaKH.Value = customer.maKH;
                 TenKH.Value = customer.tenKH;
                 Sdt.Value = customer.sdt;
@@ -83,6 +83,7 @@ namespace quanlyxekhach.Models
             }
             catch (Exception)
             {
+                Debug.WriteLine("vao exxcep");
                 return false;
             }
         }
@@ -149,12 +150,12 @@ namespace quanlyxekhach.Models
                 return false;
             }
         }
-        public int Count()
+        public int Maxstt()
         {
             var con = _factory.CreateConnection();
             con.Open();
 
-            var query = "SELECT Count(*) FROM KhachHang";
+            var query = "SELECT Max(stt) FROM KhachHang";
             var cmd = _factory.CreateCommand(query, con);
             Int32 count = (Int32)(cmd.ExecuteScalar());
 

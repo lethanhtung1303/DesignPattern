@@ -18,7 +18,7 @@ namespace quanlyxekhach.formFactory
         {
             if (nameForm == "EMPLOYEE")
             {
-                return new ManageCustomer();
+                return new ManageCustomer(dataSend);
             }
             else if (nameForm == "SELLER")
             {
@@ -27,6 +27,10 @@ namespace quanlyxekhach.formFactory
             else if (nameForm == "ADMIN")
             {
                 return new ManageEmployee();
+            }
+            else if(nameForm == "EMPLOYEE_INFO_TRIP")
+            {
+                return new ManageInfoTrip(dataSend);
             }
             return null;
         }

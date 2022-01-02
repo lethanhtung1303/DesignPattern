@@ -96,7 +96,7 @@
     <Compile Include="Models\InfoTripDAO.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\LocationDao.cs" />
-    <Compile Include="Models\Temp.cs" />
+    <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Models\ticket.cs" />
     <Compile Include="Models\TicketDao.cs" />
     <Compile Include="Payment.cs">

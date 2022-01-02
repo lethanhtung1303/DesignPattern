@@ -37,7 +37,7 @@ namespace quanlyxekhach.Models
             var cmd = factory.CreateCommand("select * from XeKhach", con);
             var adapter = factory.CreateDataAdapter(cmd);
             var tb = new DataTable();
-            var ListCar = new List<Temp>();
+            var ListCar = new List<Vehicle>();
             adapter.Fill(tb);
 
             con.Close();

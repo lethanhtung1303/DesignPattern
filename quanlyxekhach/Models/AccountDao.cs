@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -130,6 +131,7 @@ namespace quanlyxekhach.Models
 
         public Account GetAccount(string tenTaiKhoan)
         {
+            Debug.WriteLine("123 " +tenTaiKhoan);
             var con = factory.CreateConnection();
             con.Open();
             var cmd = factory.CreateCommand("Select * from TaiKhoan where TenTK = @TenTK", con);

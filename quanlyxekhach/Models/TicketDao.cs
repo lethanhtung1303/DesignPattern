@@ -64,12 +64,12 @@ namespace quanlyxekhach.Models
             return ok;
         }
 
-        public int Count()
+        public int MaxStt()
         {
             var con = factory.CreateConnection();
             con.Open();
 
-            var query = "SELECT Count(*) FROM PhieuVe";
+            var query = "SELECT MAX(stt) FROM PhieuVe";
             var cmd = factory.CreateCommand(query, con);
             Int32 count = (Int32)(cmd.ExecuteScalar());
 
