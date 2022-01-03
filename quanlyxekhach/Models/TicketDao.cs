@@ -76,5 +76,64 @@ namespace quanlyxekhach.Models
             return count;
         }
 
+        public DataTable GetAll()
+        {
+            var con = factory.CreateConnection();
+            con.Open();
+
+            var query = "SELECT * FROM PhieuVe";
+            var cmd = factory.CreateCommand(query, con);
+            var adapter = factory.CreateDataAdapter(cmd);
+
+            var tb = new DataTable();
+            adapter.Fill(tb);
+
+            con.Close();
+            return tb;
+        }
+
+        public DataTable Find(string txtFind)
+        {
+            var con = factory.CreateConnection();
+            con.Open();
+
+            var query = "SELECT * FROM PhieuVe WHERE (MaPhieu LIKE N'%" + txtFind + "%' OR MaKH LIKE N'%" + txtFind + "%' OR TenKH LIKE N'%" + txtFind + "%' OR MaNVBV LIKE N'%" + txtFind + "%' OR TenNVBV LIKE N'%" + txtFind + "%' OR SoTien LIKE N'%" + txtFind + "%' OR ChoNgoi LIKE N'%" + txtFind + "%' OR MaChuyenxe LIKE N'%" + txtFind + "%' OR NgayKhoiHanh LIKE N'%" + txtFind + "%' OR TenDD LIKE N'%" + txtFind + "%')";
+            var cmd = factory.CreateCommand(query, con);
+            var adapter = factory.CreateDataAdapter(cmd);
+
+            var tb = new DataTable();
+            adapter.Fill(tb);
+
+            con.Close();
+            return tb;
+        }
+
+        public bool Delete(Ticket ticket)
+        {
+            try
+            {
+                var con = factory.CreateConnection();
+                con.Open();
+
+                var query = "DELETE PhieuVe WHERE MaPhieu = @MaPhieu";
+
+                var cmd = factory.CreateCommand(query, con);
+
+                var MaPhieu = factory.SqlParameter("@MaPhieu", SqlDbType.Char);
+
+                MaPhieu.Value = ticket.MaPhieu;
+
+                cmd.Parameters.Add(MaPhieu);
+
+                var ok = cmd.ExecuteNonQuery() > 0;
+                con.Close();
+                return ok;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }

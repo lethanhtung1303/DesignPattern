@@ -79,6 +79,12 @@
     <Compile Include="ManageInfoTrip.Designer.cs">
       <DependentUpon>ManageInfoTrip.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageTicket.Designer.cs">
+      <DependentUpon>ManageTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountDao.cs" />
     <Compile Include="AbstractModel\SqlFactory.cs" />
@@ -97,7 +103,7 @@
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\LocationDao.cs" />
     <Compile Include="Models\Vehicle.cs" />
-    <Compile Include="Models\ticket.cs" />
+    <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\TicketDao.cs" />
     <Compile Include="Payment.cs">
       <SubType>Form</SubType>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageInfoTrip.resx">
       <DependentUpon>ManageInfoTrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageTicket.resx">
+      <DependentUpon>ManageTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
