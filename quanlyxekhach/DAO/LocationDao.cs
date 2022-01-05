@@ -6,7 +6,7 @@ using System.Data;
 
 namespace quanlyxekhach.DAO
 {
-    internal class LocationDao : ILocationDao
+    public class LocationDao : ILocationDao
     {
         private AbstractDbFactory factory;
 

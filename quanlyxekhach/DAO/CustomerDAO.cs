@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace quanlyxekhach.DAO
 {
-    internal class CustomerDAO : ICustomerDAO
+    public class CustomerDAO : ICustomerDAO
     {
         private AbstractDbFactory _factory;
 

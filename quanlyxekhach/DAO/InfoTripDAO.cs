@@ -7,7 +7,7 @@ using System.Data;
 
 namespace quanlyxekhach.DAO
 {
-    internal class InfoTripDAO : IInfoTripDAO
+    public class InfoTripDAO : IInfoTripDAO
     {
         private AbstractDbFactory _factory;
 

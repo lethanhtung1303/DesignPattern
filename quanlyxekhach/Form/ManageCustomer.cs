@@ -2,6 +2,7 @@
 using quanlyxekhach.CommandButton;
 using quanlyxekhach.DAO;
 using quanlyxekhach.formFactory;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
 using System.Data;
@@ -15,8 +16,9 @@ namespace quanlyxekhach
         private string dataInfo;
         private string maKH;
         private FormController formController;
-        private CustomerDAO customerDAO;
-        private AccountDao accountDao;
+        private ICustomerDAO customerDAO;
+        private IAccountDao accountDao;
+
         private CommandButtonManage enablebtnDelete, disablebtnDelete,
             enablebtnChange, disablebtnChange,
             enablebtnFind, disablebtnFind;
@@ -103,7 +105,6 @@ namespace quanlyxekhach
 
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void thôngTinNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)

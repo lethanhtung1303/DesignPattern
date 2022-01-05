@@ -1,6 +1,7 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
 using quanlyxekhach.DAO;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
 using System.Data;
@@ -10,7 +11,7 @@ namespace quanlyxekhach
 {
     public partial class ManageTicket : Form
     {
-        private TicketDao ticketDAO;
+        private ITicketDao ticketDAO;
 
         private CommandButtonManage enableBtnFind, disableBtnFind,
             enableBtnDelete, disableBtnDelete;

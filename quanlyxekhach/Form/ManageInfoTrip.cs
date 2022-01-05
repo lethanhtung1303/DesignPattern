@@ -1,6 +1,7 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
 using quanlyxekhach.DAO;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
 using System.Data;
@@ -10,8 +11,8 @@ namespace quanlyxekhach
 {
     public partial class ManageInfoTrip : Form
     {
-        private InfoTripDAO infoTripDAO;
-        private AccountDao accountDao;
+        private IInfoTripDAO infoTripDAO;
+        private IAccountDao accountDao;
         private string maChuyen;
         private string dataInfo;
 

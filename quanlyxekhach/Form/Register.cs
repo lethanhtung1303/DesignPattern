@@ -1,5 +1,6 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.DAO;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
 using System.Windows.Forms;
@@ -12,7 +13,7 @@ namespace quanlyxekhach
                {
                    return new SqlFactory();
                }*/
-        private AccountDao dao;
+        private IAccountDao dao;
 
         public Register()
         {

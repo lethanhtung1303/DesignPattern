@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace quanlyxekhach.DAO
 {
-    internal class TicketDao : ITicketDao
+    public class TicketDao : ITicketDao
     {
         private AbstractDbFactory factory;
 

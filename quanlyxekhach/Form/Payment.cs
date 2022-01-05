@@ -2,6 +2,7 @@
 using quanlyxekhach.CommandButton;
 using quanlyxekhach.DAO;
 using quanlyxekhach.formFactory;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
 using System.Windows.Forms;
@@ -10,10 +11,10 @@ namespace quanlyxekhach
 {
     public partial class Payment : Form
     {
-        private LocationDao locationDao;
-        private AccountDao accountDao;
-        private CustomerDAO customerDao;
-        private TicketDao ticketDao;
+        private ILocationDao locationDao;
+        private IAccountDao accountDao;
+        private ICustomerDAO customerDao;
+        private ITicketDao ticketDao;
         private string dataInfo;
         private FormController formController;
         private CommandButtonManage enablePayment, disablePayment;
