@@ -1,4 +1,6 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.DAO;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
 using System.Data;
@@ -8,7 +10,7 @@ namespace quanlyxekhach
 {
     public partial class AccountManagement : Form
     {
-        private AccountDao dao;
+        private IAccountDao dao;
 
         public AccountManagement()
         {

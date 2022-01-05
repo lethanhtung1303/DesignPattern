@@ -1,4 +1,6 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.DAO;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
 using System.Windows.Forms;
@@ -11,7 +13,7 @@ namespace quanlyxekhach
                {
                    return new SqlFactory();
                }*/
-        private AccountDao dao;
+        private IAccountDao dao;
 
         public Register()
         {
@@ -33,7 +35,7 @@ namespace quanlyxekhach
             account.TenTK = txtUsername.Text;
             account.ChucVu = txtPosition.Text;
             account.MatKhau = txtPassword.Text;
-            var createAcc = dao.Add(account);
+            var createAcc = dao.Insert(account);
 
             if (createAcc)
             {

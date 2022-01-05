@@ -1,15 +1,13 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.IDAO;
+using quanlyxekhach.Models;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace quanlyxekhach.Models
+namespace quanlyxekhach.DAO
 {
-    class CustomerDAO
+    public class CustomerDAO : ICustomerDAO
     {
         private AbstractDbFactory _factory;
 
@@ -66,7 +64,7 @@ namespace quanlyxekhach.Models
                 var TenKH = _factory.SqlParameter("@TenKH", SqlDbType.NVarChar);
                 var Sdt = _factory.SqlParameter("@Sdt", SqlDbType.Char);
                 var GioiTinh = _factory.SqlParameter("@GioiTinh", SqlDbType.Bit);
-                Debug.WriteLine(customer.maKH + " "+ customer.tenKH + " " + customer.sdt + " " + customer.gioiTinh );
+                Debug.WriteLine(customer.maKH + " " + customer.tenKH + " " + customer.sdt + " " + customer.gioiTinh);
                 MaKH.Value = customer.maKH;
                 TenKH.Value = customer.tenKH;
                 Sdt.Value = customer.sdt;
@@ -149,6 +147,7 @@ namespace quanlyxekhach.Models
                 return false;
             }
         }
+
         public int Maxstt()
         {
             var con = _factory.CreateConnection();
@@ -156,10 +155,9 @@ namespace quanlyxekhach.Models
 
             var query = "SELECT Max(stt) FROM KhachHang";
             var cmd = _factory.CreateCommand(query, con);
-            Int32 count = (Int32)(cmd.ExecuteScalar());
+            int count = (int)cmd.ExecuteScalar();
 
             return count;
         }
     }
 }
-

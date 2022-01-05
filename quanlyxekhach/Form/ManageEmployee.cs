@@ -1,5 +1,7 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
+using quanlyxekhach.DAO;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
 using System.Data;
@@ -9,7 +11,7 @@ namespace quanlyxekhach
 {
     public partial class ManageEmployee : Form
     {
-        private EmployeeDAO employeeDAO;
+        private IEmployeeDAO employeeDAO;
 
         private CommandButtonManage enablebtnAdd, disablebtnAdd,
             enablebtnDelete, disablebtnDelete,

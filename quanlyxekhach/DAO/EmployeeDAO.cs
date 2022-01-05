@@ -1,14 +1,12 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.IDAO;
+using quanlyxekhach.Models;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace quanlyxekhach.Models
+namespace quanlyxekhach.DAO
 {
-    public class EmployeeDAO
+    public class EmployeeDAO : IEmployeeDAO
     {
         private AbstractDbFactory _factory;
 

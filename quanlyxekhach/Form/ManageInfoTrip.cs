@@ -1,24 +1,21 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
+using quanlyxekhach.DAO;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace quanlyxekhach
 {
     public partial class ManageInfoTrip : Form
     {
-        private InfoTripDAO infoTripDAO;
-        private AccountDao accountDao;
+        private IInfoTripDAO infoTripDAO;
+        private IAccountDao accountDao;
         private string maChuyen;
         private string dataInfo;
+
         private CommandButtonManage enablebtnFind, disablebtnFind,
             enablebtnChange, disablebtnChange,
             enablebtnUpdate, disablebtnUpdate;

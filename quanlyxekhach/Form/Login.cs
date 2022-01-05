@@ -1,7 +1,8 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
+using quanlyxekhach.DAO;
 using quanlyxekhach.formFactory;
-using quanlyxekhach.Models;
+using quanlyxekhach.IDAO;
 using System;
 using System.Windows.Forms;
 
@@ -9,9 +10,10 @@ namespace quanlyxekhach
 {
     public partial class Login : Form
     {
-        private AccountDao dao;
+        private IAccountDao dao;
         private FormController formController;
         private CommandButtonManage enableLogin, disableLogin;
+
         public Login()
         {
             InitializeComponent();
@@ -35,21 +37,20 @@ namespace quanlyxekhach
             {
                 txtErrorMess.Text = "Vui lòng điền đầy đủ thông tin";
             }
-     
+
             if (dao.Login(txtUsername.Text.Trim(), txtPassword.Text.Trim()))
             {
                 if (txtUsername.Text.Contains("admin"))
                 {
-                    formController.FormRequest("ADMIN",txtUsername.Text, this);
+                    formController.FormRequest("ADMIN", txtUsername.Text, this);
                 }
                 else if (txtUsername.Text.Contains("employee"))
                 {
-                    formController.FormRequest("EMPLOYEE",txtUsername.Text, this);// sử dụng simple factory
+                    formController.FormRequest("EMPLOYEE", txtUsername.Text, this);// sử dụng simple factory
                 }
                 else if (txtUsername.Text.Contains("seller"))
                 {
-                    formController.FormRequest("SELLER",txtUsername.Text, this);
-                  
+                    formController.FormRequest("SELLER", txtUsername.Text, this);
                 }
             }
             else
@@ -60,7 +61,7 @@ namespace quanlyxekhach
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            if(txtPassword.TextLength>0|| txtUsername.TextLength > 0)
+            if (txtPassword.TextLength > 0 || txtUsername.TextLength > 0)
             {
                 enableLogin.Execute();
             }

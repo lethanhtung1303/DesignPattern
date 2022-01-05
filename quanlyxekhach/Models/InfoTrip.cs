@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace quanlyxekhach.Models
 {
-    class InfoTrip
+    public class InfoTrip
     {
         public string maChuyen { get; set; }
         public string maTaiXe { get; set; }

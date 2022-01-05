@@ -1,15 +1,14 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.IDAO;
+using quanlyxekhach.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace quanlyxekhach.Models
+namespace quanlyxekhach.DAO
 {
-    public class AccountDao
+    public class AccountDao : IAccountDao
     {
         private AbstractDbFactory factory;
 
@@ -65,7 +64,7 @@ namespace quanlyxekhach.Models
             return tb;
         }
 
-        public bool Add(Account account)
+        public bool Insert(Account account)
         {
             var con = factory.CreateConnection();
             con.Open();
@@ -131,7 +130,7 @@ namespace quanlyxekhach.Models
 
         public Account GetAccount(string tenTaiKhoan)
         {
-            Debug.WriteLine("123 " +tenTaiKhoan);
+            Debug.WriteLine("123 " + tenTaiKhoan);
             var con = factory.CreateConnection();
             con.Open();
             var cmd = factory.CreateCommand("Select * from TaiKhoan where TenTK = @TenTK", con);
@@ -150,7 +149,7 @@ namespace quanlyxekhach.Models
                 account.ChucVu = dataRow["ChucVu"].ToString();
                 account.TenTK = dataRow["TenTK"].ToString();
                 account.MatKhau = dataRow["MatKhau"].ToString();
-             }
+            }
             return account;
         }
     }

@@ -1,23 +1,21 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
+using quanlyxekhach.DAO;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace quanlyxekhach
 {
     public partial class ManageTicket : Form
     {
-        private TicketDao ticketDAO;
-        private CommandButtonManage enableBtnFind, disableBtnFind, 
+        private ITicketDao ticketDAO;
+
+        private CommandButtonManage enableBtnFind, disableBtnFind,
             enableBtnDelete, disableBtnDelete;
+
         private Ticket currentTicket;
         private string dataInfo;
         private void ManageTicket_Load(object sender, EventArgs e)

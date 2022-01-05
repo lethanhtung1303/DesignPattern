@@ -1,14 +1,12 @@
 ﻿using quanlyxekhach.AbstractModel;
-using System;
+using quanlyxekhach.IDAO;
+using quanlyxekhach.Models;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace quanlyxekhach.Models
+namespace quanlyxekhach.DAO
 {
-    class LocationDao
+    public class LocationDao : ILocationDao
     {
         private AbstractDbFactory factory;
 
@@ -16,6 +14,7 @@ namespace quanlyxekhach.Models
         {
             this.factory = factory;
         }
+
         public DataTable GetAll()
         {
             var con = factory.CreateConnection();
@@ -25,7 +24,7 @@ namespace quanlyxekhach.Models
             var tb = new DataTable();
             var ListLocation = new List<Location>();
             adapter.Fill(tb);
-     
+
             con.Close();
             return tb;
         }

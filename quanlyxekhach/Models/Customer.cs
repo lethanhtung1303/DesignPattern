@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace quanlyxekhach.Models
+﻿namespace quanlyxekhach.Models
 {
-    class Customer
+    public class Customer
     {
         public int stt { get; set; }
         public string maKH { get; set; }
