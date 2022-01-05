@@ -199,8 +199,8 @@ namespace quanlyxekhach
 
         private void cácSảnPhẩmĐãBánToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //ListPhieuVe listPhieuVe = new ListPhieuVe();
-            //listPhieuVe.Show();
+            ManageTicket manageTicket = new ManageTicket();
+            manageTicket.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

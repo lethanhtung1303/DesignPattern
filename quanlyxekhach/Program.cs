@@ -21,6 +21,7 @@ namespace quanlyxekhach
             //Application.Run(new ManageEmployee());
             //Application.Run(new ManageInfoTrip());
             //Application.Run(new AccountManagement());
+            //Application.Run(new ManageTicket());
         }
     }
 }
