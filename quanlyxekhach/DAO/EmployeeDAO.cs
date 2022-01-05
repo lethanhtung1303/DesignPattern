@@ -172,5 +172,16 @@ namespace quanlyxekhach.DAO
                 return false;
             }
         }
+        public int MaxStt()
+        {
+            var con = _factory.CreateConnection();
+            con.Open();
+
+            var query = "SELECT Max(stt) FROM NhanVien";
+            var cmd = _factory.CreateCommand(query, con);
+            int count = (int)cmd.ExecuteScalar();
+
+            return count;
+        }
     }
 }

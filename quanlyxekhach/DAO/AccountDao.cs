@@ -1,6 +1,7 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
+using quanlyxekhach.Models.AccountBuilder;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -130,7 +131,6 @@ namespace quanlyxekhach.DAO
 
         public Account GetAccount(string tenTaiKhoan)
         {
-            Debug.WriteLine("123 " + tenTaiKhoan);
             var con = factory.CreateConnection();
             con.Open();
             var cmd = factory.CreateCommand("Select * from TaiKhoan where TenTK = @TenTK", con);
@@ -140,17 +140,21 @@ namespace quanlyxekhach.DAO
             var adapter = factory.CreateDataAdapter(cmd);
             var tb = new DataTable();
             adapter.Fill(tb);
-            var account = new Account();
+            IAccountBuilder accountBuilder = new AccountBuilder();
+            Account account;
             foreach (DataRow dataRow in tb.Rows)
             {
-                account.stt = Convert.ToInt32(dataRow["stt"]);
-                account.MaNV = dataRow["MaNV"].ToString();
-                account.TenNv = dataRow["TenNV"].ToString();
-                account.ChucVu = dataRow["ChucVu"].ToString();
-                account.TenTK = dataRow["TenTK"].ToString();
-                account.MatKhau = dataRow["MatKhau"].ToString();
+                 account = accountBuilder.AddStt(Convert.ToInt32(dataRow["stt"]))
+                    .AddMaNV(dataRow["MaNV"].ToString())
+                    .AddTenNV(dataRow["TenNV"].ToString())
+                    .AddChucVu(dataRow["ChucVu"].ToString())
+                    .AddTenTK(dataRow["TenTK"].ToString())
+                    .AddMatKhau(dataRow["MatKhau"].ToString()).Builder();
+                return account;
             }
-            return account;
+            return null;
+        
         }
+
     }
 }

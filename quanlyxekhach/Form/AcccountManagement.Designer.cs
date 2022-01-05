@@ -34,22 +34,21 @@ namespace quanlyxekhach
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtstt = new System.Windows.Forms.Label();
+            this.txtMaNV = new System.Windows.Forms.Label();
+            this.txtPass = new quanlyxekhach.StrateryPattern.MyTextBox();
+            this.txtPosition = new quanlyxekhach.StrateryPattern.MyTextBox();
+            this.txtNameEmp = new quanlyxekhach.StrateryPattern.MyTextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDeleteAcc = new System.Windows.Forms.Button();
             this.btnChangeDataAcc = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.txtMaNV = new System.Windows.Forms.Label();
-            this.txtstt = new System.Windows.Forms.Label();
-            this.txtPass = new quanlyxekhach.StrateryPattern.MyTextBox();
-            this.txtPosition = new quanlyxekhach.StrateryPattern.MyTextBox();
-            this.txtNameEmp = new quanlyxekhach.StrateryPattern.MyTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -96,7 +95,6 @@ namespace quanlyxekhach
             this.panel1.Controls.Add(this.txtPass);
             this.panel1.Controls.Add(this.txtPosition);
             this.panel1.Controls.Add(this.txtNameEmp);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnDeleteAcc);
@@ -112,15 +110,49 @@ namespace quanlyxekhach
             this.panel1.Size = new System.Drawing.Size(327, 344);
             this.panel1.TabIndex = 26;
             // 
-            // button1
+            // txtstt
             // 
-            this.button1.Location = new System.Drawing.Point(232, 271);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtstt.AutoSize = true;
+            this.txtstt.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtstt.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.txtstt.Location = new System.Drawing.Point(101, 31);
+            this.txtstt.Name = "txtstt";
+            this.txtstt.Size = new System.Drawing.Size(0, 13);
+            this.txtstt.TabIndex = 22;
+            // 
+            // txtMaNV
+            // 
+            this.txtMaNV.AutoSize = true;
+            this.txtMaNV.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtMaNV.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.txtMaNV.Location = new System.Drawing.Point(56, 31);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(0, 13);
+            this.txtMaNV.TabIndex = 21;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(115, 176);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(164, 20);
+            this.txtPass.TabIndex = 20;
+            this.txtPass.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.Location = new System.Drawing.Point(118, 101);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(164, 20);
+            this.txtPosition.TabIndex = 19;
+            this.txtPosition.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
+            // 
+            // txtNameEmp
+            // 
+            this.txtNameEmp.Location = new System.Drawing.Point(118, 60);
+            this.txtNameEmp.Name = "txtNameEmp";
+            this.txtNameEmp.Size = new System.Drawing.Size(164, 20);
+            this.txtNameEmp.TabIndex = 18;
+            this.txtNameEmp.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
             // 
             // btnCancel
             // 
@@ -170,32 +202,13 @@ namespace quanlyxekhach
             this.label5.TabIndex = 8;
             this.label5.Text = "THÔNG TIN TÀI KHOẢN";
             // 
-            // label1
+            // txtUserName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Chức vụ ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 146);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên tài khoản ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 180);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Mật khẩu";
+            this.txtUserName.Location = new System.Drawing.Point(118, 139);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.ReadOnly = true;
+            this.txtUserName.Size = new System.Drawing.Size(164, 20);
+            this.txtUserName.TabIndex = 6;
             // 
             // label4
             // 
@@ -206,57 +219,32 @@ namespace quanlyxekhach
             this.label4.TabIndex = 3;
             this.label4.Text = "Tên nhân viên ";
             // 
-            // txtUserName
+            // label3
             // 
-            this.txtUserName.Location = new System.Drawing.Point(118, 139);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.ReadOnly = true;
-            this.txtUserName.Size = new System.Drawing.Size(164, 20);
-            this.txtUserName.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(33, 180);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Mật khẩu";
             // 
-            // txtMaNV
+            // label2
             // 
-            this.txtMaNV.AutoSize = true;
-            this.txtMaNV.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtMaNV.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.txtMaNV.Location = new System.Drawing.Point(56, 31);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(0, 13);
-            this.txtMaNV.TabIndex = 21;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(33, 146);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tên tài khoản ";
             // 
-            // txtstt
+            // label1
             // 
-            this.txtstt.AutoSize = true;
-            this.txtstt.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtstt.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.txtstt.Location = new System.Drawing.Point(101, 31);
-            this.txtstt.Name = "txtstt";
-            this.txtstt.Size = new System.Drawing.Size(0, 13);
-            this.txtstt.TabIndex = 22;
-            // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(115, 176);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(164, 20);
-            this.txtPass.TabIndex = 20;
-            this.txtPass.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
-            // 
-            // txtPosition
-            // 
-            this.txtPosition.Location = new System.Drawing.Point(118, 101);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(164, 20);
-            this.txtPosition.TabIndex = 19;
-            this.txtPosition.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
-            // 
-            // txtNameEmp
-            // 
-            this.txtNameEmp.Location = new System.Drawing.Point(118, 60);
-            this.txtNameEmp.Name = "txtNameEmp";
-            this.txtNameEmp.Size = new System.Drawing.Size(164, 20);
-            this.txtNameEmp.TabIndex = 18;
-            this.txtNameEmp.validType = quanlyxekhach.StrateryPattern.ValidationType.INTERGER;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(33, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Chức vụ ";
             // 
             // AccountManagement
             // 
@@ -290,7 +278,6 @@ namespace quanlyxekhach
         private System.Windows.Forms.Button btnDeleteAcc;
         private System.Windows.Forms.Button btnChangeDataAcc;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
         private StrateryPattern.MyTextBox txtPass;
         private StrateryPattern.MyTextBox txtPosition;
         private StrateryPattern.MyTextBox txtNameEmp;

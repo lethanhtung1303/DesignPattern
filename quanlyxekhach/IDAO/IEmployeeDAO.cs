@@ -14,5 +14,7 @@ namespace quanlyxekhach.IDAO
         bool Update(Employee employee);
 
         bool Delete(Employee employee);
+
+        int MaxStt();
     }
 }

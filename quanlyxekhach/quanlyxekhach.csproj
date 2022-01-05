@@ -91,7 +91,7 @@
     <Compile Include="IDAO\IInfoTripDAO.cs" />
     <Compile Include="IDAO\ILocationDao.cs" />
     <Compile Include="IDAO\ITicketDao.cs" />
-    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\AccountBuilder\Account.cs" />
     <Compile Include="DAO\AccountDao.cs" />
     <Compile Include="AbstractModel\SqlFactory.cs" />
     <Compile Include="Form\AcccountManagement.cs">
@@ -100,6 +100,8 @@
     <Compile Include="Form\AcccountManagement.Designer.cs">
       <DependentUpon>AcccountManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountBuilder\AccountBuilder.cs" />
+    <Compile Include="Models\AccountBuilder\IAccountBuilder.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="Models\Employee.cs" />
