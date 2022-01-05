@@ -1,4 +1,5 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Diagnostics;
 
 namespace quanlyxekhach.DAO
 {
-    public class AccountDao
+    public class AccountDao : IAccountDao
     {
         private AbstractDbFactory factory;
 
@@ -63,7 +64,7 @@ namespace quanlyxekhach.DAO
             return tb;
         }
 
-        public bool Add(Account account)
+        public bool Insert(Account account)
         {
             var con = factory.CreateConnection();
             con.Open();

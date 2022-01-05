@@ -34,7 +34,7 @@ namespace quanlyxekhach
             account.TenTK = txtUsername.Text;
             account.ChucVu = txtPosition.Text;
             account.MatKhau = txtPassword.Text;
-            var createAcc = dao.Add(account);
+            var createAcc = dao.Insert(account);
 
             if (createAcc)
             {

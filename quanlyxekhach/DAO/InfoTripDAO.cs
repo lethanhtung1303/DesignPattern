@@ -1,4 +1,5 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Data;
 
 namespace quanlyxekhach.DAO
 {
-    internal class InfoTripDAO
+    internal class InfoTripDAO : IInfoTripDAO
     {
         private AbstractDbFactory _factory;
 

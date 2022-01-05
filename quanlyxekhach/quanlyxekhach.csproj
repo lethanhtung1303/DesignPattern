@@ -85,6 +85,12 @@
     <Compile Include="Form\ManageTicket.Designer.cs">
       <DependentUpon>ManageTicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="IDAO\IAccountDao.cs" />
+    <Compile Include="IDAO\ICustomerDAO.cs" />
+    <Compile Include="IDAO\IEmployeeDAO.cs" />
+    <Compile Include="IDAO\IInfoTripDAO.cs" />
+    <Compile Include="IDAO\ILocationDao.cs" />
+    <Compile Include="IDAO\ITicketDao.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="DAO\AccountDao.cs" />
     <Compile Include="AbstractModel\SqlFactory.cs" />

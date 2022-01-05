@@ -1,11 +1,12 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System.Collections.Generic;
 using System.Data;
 
 namespace quanlyxekhach.DAO
 {
-    internal class LocationDao
+    internal class LocationDao : ILocationDao
     {
         private AbstractDbFactory factory;
 

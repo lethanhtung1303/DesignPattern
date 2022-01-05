@@ -1,6 +1,6 @@
 ﻿namespace quanlyxekhach.Models
 {
-    internal class Customer
+    public class Customer
     {
         public int stt { get; set; }
         public string maKH { get; set; }

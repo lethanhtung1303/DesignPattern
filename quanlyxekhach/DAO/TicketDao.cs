@@ -1,4 +1,5 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
 using System;
 using System.Data;
@@ -6,7 +7,7 @@ using System.Diagnostics;
 
 namespace quanlyxekhach.DAO
 {
-    internal class TicketDao
+    internal class TicketDao : ITicketDao
     {
         private AbstractDbFactory factory;
 

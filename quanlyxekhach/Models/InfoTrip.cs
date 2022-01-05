@@ -2,7 +2,7 @@
 
 namespace quanlyxekhach.Models
 {
-    internal class InfoTrip
+    public class InfoTrip
     {
         public string maChuyen { get; set; }
         public string maTaiXe { get; set; }

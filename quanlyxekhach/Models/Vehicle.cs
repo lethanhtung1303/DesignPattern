@@ -1,6 +1,6 @@
 ﻿namespace quanlyxekhach.Models
 {
-    internal class Vehicle
+    public class Vehicle
     {
         public int stt { get; set; }
         public string MaXe { get; set; }
