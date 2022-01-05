@@ -1,14 +1,12 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace quanlyxekhach.Models
+namespace quanlyxekhach.DAO
 {
-    class InfoTripDAO
+    internal class InfoTripDAO
     {
         private AbstractDbFactory _factory;
 
@@ -167,13 +165,13 @@ namespace quanlyxekhach.Models
             {
                 Employee taiXe = new Employee
                 {
-                    STT = Convert.ToInt32(dataRow["stt"]), 
-                    MaNV = Convert.ToString(dataRow["MaNV"]), 
-                    TenNV = Convert.ToString(dataRow["TenNV"]), 
-                    ChucVu = Convert.ToString(dataRow["ChucVu"]), 
-                    GioiTinh = Convert.ToBoolean(dataRow["GioiTinh"]), 
-                    SDT = Convert.ToString(dataRow["SDT"]), 
-                    NgaySinh = Convert.ToString(dataRow["NgaySinh"]), 
+                    STT = Convert.ToInt32(dataRow["stt"]),
+                    MaNV = Convert.ToString(dataRow["MaNV"]),
+                    TenNV = Convert.ToString(dataRow["TenNV"]),
+                    ChucVu = Convert.ToString(dataRow["ChucVu"]),
+                    GioiTinh = Convert.ToBoolean(dataRow["GioiTinh"]),
+                    SDT = Convert.ToString(dataRow["SDT"]),
+                    NgaySinh = Convert.ToString(dataRow["NgaySinh"]),
                     NgayVaoLam = Convert.ToString(dataRow["NgayVaoLam"])
                 };
                 listTaiXe.Add(taiXe);
@@ -253,8 +251,8 @@ namespace quanlyxekhach.Models
                 Vehicle vehicle = new Vehicle
                 {
                     stt = Convert.ToInt32(dataRow["stt"]),
-                    MaXe = Convert.ToString(dataRow["MaXe"]), 
-                    MaTaiXe = Convert.ToString(dataRow["MaTaiXe"]), 
+                    MaXe = Convert.ToString(dataRow["MaXe"]),
+                    MaTaiXe = Convert.ToString(dataRow["MaTaiXe"]),
                     MaHDV = Convert.ToString(dataRow["MaHDV"])
                 };
                 listVehicle.Add(vehicle);

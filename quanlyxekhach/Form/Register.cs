@@ -1,4 +1,5 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.DAO;
 using quanlyxekhach.Models;
 using System;
 using System.Windows.Forms;

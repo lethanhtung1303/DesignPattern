@@ -1,17 +1,13 @@
 ﻿using quanlyxekhach.AbstractModel;
+using quanlyxekhach.Models;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace quanlyxekhach.Models
+namespace quanlyxekhach.DAO
 {
-    class TicketDao
+    internal class TicketDao
     {
-
         private AbstractDbFactory factory;
 
         public TicketDao(AbstractDbFactory factory)
@@ -44,10 +40,9 @@ namespace quanlyxekhach.Models
             MaNVBV.Value = ticket.MaNVBV;
             SoTien.Value = ticket.SoTien;
             ChoNgoi.Value = ticket.ChoNgoi;
-           // NgayKhoiHanh.Value = ticket.NgayKhoiHanh;
+            // NgayKhoiHanh.Value = ticket.NgayKhoiHanh;
             MaChuyenxe.Value = ticket.MaChuyenxe;
             TenDD.Value = ticket.TenDD;
-
 
             cmd.Parameters.Add(MaPhieu);
             cmd.Parameters.Add(MaKH);
@@ -71,7 +66,7 @@ namespace quanlyxekhach.Models
 
             var query = "SELECT MAX(stt) FROM PhieuVe";
             var cmd = factory.CreateCommand(query, con);
-            Int32 count = (Int32)(cmd.ExecuteScalar());
+            int count = (int)cmd.ExecuteScalar();
 
             return count;
         }
@@ -134,6 +129,5 @@ namespace quanlyxekhach.Models
                 return false;
             }
         }
-
     }
 }

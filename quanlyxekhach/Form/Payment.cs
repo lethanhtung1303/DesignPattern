@@ -1,9 +1,9 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
+using quanlyxekhach.DAO;
 using quanlyxekhach.formFactory;
 using quanlyxekhach.Models;
 using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace quanlyxekhach
@@ -27,7 +27,7 @@ namespace quanlyxekhach
             customerDao = new CustomerDAO(sql);
             ticketDao = new TicketDao(sql);
             dataInfo = dataSend;
-            enablePayment= new ManageButtonEnable(btnPayment);
+            enablePayment = new ManageButtonEnable(btnPayment);
             disablePayment = new ManageButtonDisable(btnPayment);
             disablePayment.Execute();
         }
@@ -47,8 +47,8 @@ namespace quanlyxekhach
             var accountInfo = accountDao.GetAccount(dataInfo);
             txtNameEmp.Text = accountInfo.TenNv;
             txtIdEmp.Text = accountInfo.MaNV;
-
         }
+
         public bool checkData()
         {
             if (string.IsNullOrEmpty(txtCustomerName.Text))
@@ -160,6 +160,7 @@ namespace quanlyxekhach
 
             return true;
         }
+
         private void ClearData()
         {
             txtCustomerName.Text = "";
@@ -172,9 +173,10 @@ namespace quanlyxekhach
             cbLocation.SelectedIndex = -1;
             dtTimeStart.Value = DateTime.Now;
         }
+
         private void btnPayment_Click(object sender, System.EventArgs e)
         {
-            if(checkData())
+            if (checkData())
             {
                 var toTalCustomer = customerDao.Maxstt();
                 var totalTicket = ticketDao.MaxStt();
@@ -214,19 +216,16 @@ namespace quanlyxekhach
                         MessageBox.Show("Có lỗi xảy ra");
                     }
                 }
-                
             }
-            
         }
 
         private void radMaleCus_CheckedChanged(object sender, EventArgs e)
         {
-
         }
 
         private void txtCustomerName_TextChanged(object sender, EventArgs e)
         {
-            if (txtCustomerName.TextLength >0)
+            if (txtCustomerName.TextLength > 0)
             {
                 enablePayment.Execute();
             }

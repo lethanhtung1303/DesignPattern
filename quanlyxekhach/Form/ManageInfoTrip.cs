@@ -1,14 +1,9 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
+using quanlyxekhach.DAO;
 using quanlyxekhach.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace quanlyxekhach
@@ -19,6 +14,7 @@ namespace quanlyxekhach
         private AccountDao accountDao;
         private string maChuyen;
         private string dataInfo;
+
         private CommandButtonManage enablebtnFind, disablebtnFind,
             enablebtnChange, disablebtnChange,
             enablebtnUpdate, disablebtnUpdate;

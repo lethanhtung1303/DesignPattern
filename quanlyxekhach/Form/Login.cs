@@ -1,7 +1,7 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
+using quanlyxekhach.DAO;
 using quanlyxekhach.formFactory;
-using quanlyxekhach.Models;
 using System;
 using System.Windows.Forms;
 

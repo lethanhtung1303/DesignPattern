@@ -1,5 +1,6 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
+using quanlyxekhach.DAO;
 using quanlyxekhach.Models;
 using System;
 using System.Data;
