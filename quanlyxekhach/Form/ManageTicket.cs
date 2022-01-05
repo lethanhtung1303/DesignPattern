@@ -3,6 +3,7 @@ using quanlyxekhach.CommandButton;
 using quanlyxekhach.DAO;
 using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
+using quanlyxekhach.Models.TicketBuilder;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -63,17 +64,17 @@ namespace quanlyxekhach
             {
                 // get data in cells of gridView
                 DataGridViewRow row = dataGridView1.Rows[index];
-                currentTicket = new Ticket();
-                currentTicket.MaPhieu = Convert.ToString(row.Cells[1].Value);
-                currentTicket.MaKH = Convert.ToString(row.Cells[2].Value);
-                currentTicket.TenKH = Convert.ToString(row.Cells[3].Value);
-                currentTicket.MaNVBV = Convert.ToString(row.Cells[4].Value);
-                currentTicket.TenNVBV = Convert.ToString(row.Cells[5].Value);
-                currentTicket.SoTien = Convert.ToInt32(row.Cells[6].Value);
-                currentTicket.ChoNgoi = Convert.ToString(row.Cells[7].Value);
-                currentTicket.MaChuyenxe = Convert.ToString(row.Cells[8].Value);
-                currentTicket.NgayKhoiHanh = Convert.ToString(row.Cells[9].Value);
-                currentTicket.TenDD = Convert.ToString(row.Cells[10].Value);
+                ITicketBuilder ticketBuilder = new TicketBuilder(); 
+                currentTicket = ticketBuilder.AddMaPhieu(Convert.ToString(row.Cells[1].Value))
+                    .AdddMaKh(Convert.ToString(row.Cells[2].Value))
+                    .AddTenKH(Convert.ToString(row.Cells[3].Value))
+                    .AddMaNVBV(Convert.ToString(row.Cells[4].Value))
+                    .AddTenNVBV(Convert.ToString(row.Cells[5].Value))
+                    .AddSoTien(Convert.ToInt32(row.Cells[6].Value))
+                    .AddChoNgoi(Convert.ToString(row.Cells[7].Value))
+                    .AddMaChuyenXe(Convert.ToString(row.Cells[8].Value))
+                    .AddNgayKhoihanh(Convert.ToString(row.Cells[9].Value))
+                    .AddTenDD(Convert.ToString(row.Cells[10].Value)).Builder();
 
                 //enable button Delete
                 enableBtnDelete.Execute();

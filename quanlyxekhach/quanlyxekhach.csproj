@@ -108,10 +108,14 @@
     <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="Models\InfoTrip.cs" />
     <Compile Include="DAO\InfoTripDAO.cs" />
-    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LocationBuilder\ILocationBuilder.cs" />
+    <Compile Include="Models\LocationBuilder\Location.cs" />
     <Compile Include="DAO\LocationDao.cs" />
+    <Compile Include="Models\LocationBuilder\LocationBuilder.cs" />
+    <Compile Include="Models\TicketBuilder\ITicketBuilder.cs" />
+    <Compile Include="Models\TicketBuilder\TicketBuilder.cs" />
     <Compile Include="Models\Vehicle.cs" />
-    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\TicketBuilder\Ticket.cs" />
     <Compile Include="DAO\TicketDao.cs" />
     <Compile Include="Form\Payment.cs">
       <SubType>Form</SubType>

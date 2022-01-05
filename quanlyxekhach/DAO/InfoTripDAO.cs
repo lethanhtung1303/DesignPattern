@@ -1,6 +1,7 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
+using quanlyxekhach.Models.LocationBuilder;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -224,12 +225,10 @@ namespace quanlyxekhach.DAO
             adapter.Fill(tb);
             foreach (DataRow dataRow in tb.Rows)
             {
-                Location location = new Location
-                {
-                    MaDD = Convert.ToString(dataRow["MaDD"]),
-                    TenDD = Convert.ToString(dataRow["TebDD"]),
-                    GiaTien = Convert.ToInt32(dataRow["GiaTien"])
-                };
+                ILocationBuilder locationBuilder = new LocationBuilder();
+                Location location = locationBuilder.AddMaDD(Convert.ToString(dataRow["MaDD"]))
+                    .AddTenDD(Convert.ToString(dataRow["TebDD"])).AddGiaTien(Convert.ToInt32(dataRow["GiaTien"])).Builder(); 
+
                 listLocation.Add(location);
             }
             con.Close();

@@ -15,5 +15,20 @@
         public string MaChuyenxe { get; set; }
         public string NgayKhoiHanh { get; set; }
         public string TenDD { get; set; }
+
+        public Ticket(int Stt, string maphieu, string makh, string tenkh, string manvbv, string tennvbv, int sotien,string chongoi, string machuyenxe, string ngaykhoihanh, string tendiadiem)
+        {
+            stt = Stt;
+            MaPhieu = maphieu;
+            MaKH = makh;
+            TenKH = tenkh;
+            MaNVBV = manvbv;
+            TenNVBV = tennvbv;
+            SoTien = sotien;
+            ChoNgoi = chongoi;
+            MaChuyenxe = machuyenxe;
+            NgayKhoiHanh = ngaykhoihanh;
+            TenDD = tendiadiem;
+        }
     }
 }

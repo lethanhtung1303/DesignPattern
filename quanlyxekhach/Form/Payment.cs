@@ -4,6 +4,7 @@ using quanlyxekhach.DAO;
 using quanlyxekhach.formFactory;
 using quanlyxekhach.IDAO;
 using quanlyxekhach.Models;
+using quanlyxekhach.Models.TicketBuilder;
 using System;
 using System.Windows.Forms;
 
@@ -16,7 +17,7 @@ namespace quanlyxekhach
         private ICustomerDAO customerDao;
         private ITicketDao ticketDao;
         private string dataInfo;
-        private FormController formController;
+
         private CommandButtonManage enablePayment, disablePayment;
 
         public Payment(string dataSend)
@@ -192,19 +193,18 @@ namespace quanlyxekhach
                 if (addCustomer)
                 {
                     string format = "yyyy-MM-dd HH:mm:ss";
-                    Ticket ticket = new Ticket()
-                    {
-                        MaPhieu = "PV" + Convert.ToString(totalTicket + 1),
-                        MaKH = "KH" + Convert.ToString(toTalCustomer + 1),
-                        TenKH = txtCustomerName.Text,
-                        TenNVBV = txtNameEmp.Text,
-                        MaNVBV = txtIdEmp.Text,
-                        SoTien = Convert.ToInt32(cbCost.Text),
-                        ChoNgoi = txtSit.Text,
-                        NgayKhoiHanh = Convert.ToDateTime(dtTimeStart.Text).ToString(format),
-                        MaChuyenxe = cbIDveh.Text,
-                        TenDD = cbLocation.Text
-                    };
+                    ITicketBuilder ticketBuilder = new TicketBuilder();
+                    Ticket ticket = ticketBuilder.AddMaPhieu("PV" + Convert.ToString(totalTicket + 1))
+                        .AdddMaKh("KH" + Convert.ToString(toTalCustomer + 1))
+                        .AddTenKH(txtCustomerName.Text)
+                        .AddTenNVBV(txtNameEmp.Text).AddMaNVBV(txtIdEmp.Text)
+                        .AddSoTien(Convert.ToInt32(cbCost.Text))
+                        .AddChoNgoi(txtSit.Text)
+                        .AddNgayKhoihanh(Convert.ToDateTime(dtTimeStart.Text).ToString(format))
+                        .AddMaChuyenXe(cbIDveh.Text)
+                        .AddTenDD(cbLocation.Text)
+                        .Builder();
+                
 
                     var addTicket = ticketDao.Add(ticket);
                     if (addTicket)
