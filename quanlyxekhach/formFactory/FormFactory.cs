@@ -32,6 +32,10 @@ namespace quanlyxekhach.formFactory
             {
                 return new ManageInfoTrip(dataSend);
             }
+            else if(nameForm == "EMPLOYEE_INFO_PAYMENT")
+            {
+                return new ManageTicket(dataSend);
+            }
             return null;
         }
     }

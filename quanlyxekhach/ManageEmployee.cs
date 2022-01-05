@@ -197,12 +197,6 @@ namespace quanlyxekhach
             this.Show();
         }
 
-        private void cácSảnPhẩmĐãBánToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ManageTicket manageTicket = new ManageTicket();
-            manageTicket.Show();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Cách ghi dữ liệu đối với các trường:\n Hướng dẫn viên: HDV \n Tài xế: TX \n bán vé và nhân viên văn phòng ghi bình thường ",

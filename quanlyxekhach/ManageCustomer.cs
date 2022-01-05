@@ -112,6 +112,12 @@ namespace quanlyxekhach
             MessageBox.Show("Tên người dùng: " + accountInfo.TenNv + "\nChức vụ: " + accountInfo.ChucVu + "\nTên tài khoản: " + accountInfo.TenTK);
         }
 
+        private void qToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var accountInfo = accountDao.GetAccount(dataInfo);
+            formController.FormRequest("EMPLOYEE_INFO_PAYMENT", accountInfo.TenTK, this);
+        }
+
         private void txtFind_TextChanged(object sender, EventArgs e)
         {
             string value = txtFind.Text;

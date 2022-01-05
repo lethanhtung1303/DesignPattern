@@ -19,7 +19,7 @@ namespace quanlyxekhach
         private CommandButtonManage enableBtnFind, disableBtnFind, 
             enableBtnDelete, disableBtnDelete;
         private Ticket currentTicket;
-
+        private string dataInfo;
         private void ManageTicket_Load(object sender, EventArgs e)
         {
             showAll();
@@ -104,7 +104,7 @@ namespace quanlyxekhach
             }
         }
 
-        public ManageTicket()
+        public ManageTicket(string dataSend)
         {
             InitializeComponent();
             CreateTicketDao();
@@ -113,6 +113,8 @@ namespace quanlyxekhach
 
             enableBtnDelete = new ManageButtonEnable(btnDelete);
             disableBtnDelete = new ManageButtonDisable(btnDelete);
+
+            dataInfo = dataSend;
         }
 
         public void CreateTicketDao()

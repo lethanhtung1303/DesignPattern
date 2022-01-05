@@ -61,6 +61,7 @@ namespace quanlyxekhach
             this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFind = new quanlyxekhach.StrateryPattern.MyTextBox();
+            this.qToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,7 +74,8 @@ namespace quanlyxekhach
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnLýKháchHàngToolStripMenuItem,
             this.QLTTCDToolStripMenuItem,
-            this.thôngTinTàiKhoảnToolStripMenuItem});
+            this.thôngTinTàiKhoảnToolStripMenuItem,
+            this.qToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -377,6 +379,13 @@ namespace quanlyxekhach
             this.txtFind.validType = quanlyxekhach.StrateryPattern.ValidationType.STRING;
             this.txtFind.TextChanged += new System.EventHandler(this.txtFind_TextChanged);
             // 
+            // qToolStripMenuItem
+            // 
+            this.qToolStripMenuItem.Name = "qToolStripMenuItem";
+            this.qToolStripMenuItem.Size = new System.Drawing.Size(150, 20);
+            this.qToolStripMenuItem.Text = "Quản lý thông tin bán vé";
+            this.qToolStripMenuItem.Click += new System.EventHandler(this.qToolStripMenuItem_Click);
+            // 
             // ManageCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,5 +445,6 @@ namespace quanlyxekhach
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.ToolStripMenuItem qToolStripMenuItem;
     }
 }

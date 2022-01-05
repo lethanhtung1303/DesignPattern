@@ -35,7 +35,6 @@ namespace quanlyxekhach
             this.đăngKíToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hiênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cácSảnPhẩmĐãBánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label7 = new System.Windows.Forms.Label();
             this.btnFind = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -83,8 +82,7 @@ namespace quanlyxekhach
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thônTinNhânViênToolStripMenuItem,
-            this.thôngTinTàiKhoảnToolStripMenuItem,
-            this.cácSảnPhẩmĐãBánToolStripMenuItem});
+            this.thôngTinTàiKhoảnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -128,13 +126,6 @@ namespace quanlyxekhach
             this.hiênToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.hiênToolStripMenuItem.Text = "Hiển thị thông tin ";
             this.hiênToolStripMenuItem.Click += new System.EventHandler(this.hiênToolStripMenuItem_Click);
-            // 
-            // cácSảnPhẩmĐãBánToolStripMenuItem
-            // 
-            this.cácSảnPhẩmĐãBánToolStripMenuItem.Name = "cácSảnPhẩmĐãBánToolStripMenuItem";
-            this.cácSảnPhẩmĐãBánToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
-            this.cácSảnPhẩmĐãBánToolStripMenuItem.Text = "Danh sách phiếu vé";
-            this.cácSảnPhẩmĐãBánToolStripMenuItem.Click += new System.EventHandler(this.cácSảnPhẩmĐãBánToolStripMenuItem_Click);
             // 
             // label7
             // 
@@ -522,7 +513,6 @@ namespace quanlyxekhach
         private System.Windows.Forms.ToolStripMenuItem đăngKíToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hiênToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cácSảnPhẩmĐãBánToolStripMenuItem;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Panel panel2;
