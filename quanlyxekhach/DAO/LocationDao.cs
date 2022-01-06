@@ -1,6 +1,7 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.IDAO;
-using quanlyxekhach.Models;
+using quanlyxekhach.Models.LocationBuilder;
+using quanlyxekhach.Models.VehicleBuilder;
 using System.Collections.Generic;
 using System.Data;
 

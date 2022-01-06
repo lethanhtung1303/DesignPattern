@@ -1,5 +1,5 @@
 ﻿
-namespace quanlyxekhach
+namespace quanlyxekhach.Forms
 {
     partial class Payment
     {

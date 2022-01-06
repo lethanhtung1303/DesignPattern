@@ -1,4 +1,4 @@
-﻿using quanlyxekhach.Models;
+﻿using quanlyxekhach.Models.CustomerBuilder;
 using System.Data;
 
 namespace quanlyxekhach.IDAO

@@ -1,4 +1,4 @@
-﻿namespace quanlyxekhach.Models
+﻿namespace quanlyxekhach.Models.AccountBuilder
 {
     public class Account
     {
@@ -9,7 +9,7 @@
         public string TenTK { get; set; }
         public string MatKhau { get; set; }
 
-        public Account (int Stt, string manv, string tennv, string chucvu, string tentk, string matkhau)
+        public Account(int Stt, string manv, string tennv, string chucvu, string tentk, string matkhau)
         {
             stt = Stt;
             MaNV = manv;

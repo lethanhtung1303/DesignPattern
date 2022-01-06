@@ -3,13 +3,13 @@ using quanlyxekhach.CommandButton;
 using quanlyxekhach.DAO;
 using quanlyxekhach.formFactory;
 using quanlyxekhach.IDAO;
-using quanlyxekhach.Models;
+using quanlyxekhach.Models.CustomerBuilder;
 using System;
 using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace quanlyxekhach
+namespace quanlyxekhach.Forms
 {
     public partial class ManageCustomer : Form
     {
@@ -198,13 +198,22 @@ namespace quanlyxekhach
         {
             if (checkData())
             {
-                Customer customer = new Customer()
-                {
-                    maKH = maKH,
-                    tenKH = txtCustomerName.Text,
-                    sdt = txtCustomerPhoneNum.Text,
-                    gioiTinh = radMaleCus.Checked ? true : false
-                };
+                //Customer customer = new Customer()
+                //{
+                //    maKH = maKH,
+                //    tenKH = txtCustomerName.Text,
+                //    sdt = txtCustomerPhoneNum.Text,
+                //    gioiTinh = radMaleCus.Checked ? true : false
+                //};
+
+                ICustomerBuilder customerBuilder = new CustomerBuilder();
+                Customer customer = customerBuilder
+                    .AddmaKH(maKH)
+                    .AddtenKH(txtCustomerName.Text)
+                    .Addsdt(txtCustomerPhoneNum.Text)
+                    .AddgioiTinh(radMaleCus.Checked ? true : false)
+                    .Builder();
+
                 if (customerDAO.Update(customer))
                 {
                     MessageBox.Show("Sửa khách hàng thành công!!!",
@@ -227,10 +236,15 @@ namespace quanlyxekhach
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Customer customer = new Customer()
-                {
-                    maKH = maKH,
-                };
+                //Customer customer = new Customer()
+                //{
+                //    maKH = maKH,
+                //};
+                ICustomerBuilder customerBuilder = new CustomerBuilder();
+                Customer customer = customerBuilder
+                    .AddmaKH(maKH)
+                    .Builder();
+
                 if (customerDAO.Delete(customer))
                 {
                     MessageBox.Show("Xóa khách hàng thành công!!!",

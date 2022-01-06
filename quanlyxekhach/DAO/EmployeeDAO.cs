@@ -1,6 +1,6 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.IDAO;
-using quanlyxekhach.Models;
+using quanlyxekhach.Models.EmployeeBuilder;
 using System;
 using System.Data;
 
@@ -172,6 +172,7 @@ namespace quanlyxekhach.DAO
                 return false;
             }
         }
+
         public int MaxStt()
         {
             var con = _factory.CreateConnection();

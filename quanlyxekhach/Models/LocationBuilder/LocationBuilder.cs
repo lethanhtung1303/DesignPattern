@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace quanlyxekhach.Models.LocationBuilder
+﻿namespace quanlyxekhach.Models.LocationBuilder
 {
-    class LocationBuilder : ILocationBuilder
+    internal class LocationBuilder : ILocationBuilder
     {
         public string MaDD { get; set; }
         public string TenDD { get; set; }
         public int GiaTien { get; set; }
+
         public LocationBuilder AddGiaTien(int giatien)
         {
-            GiaTien = giatien;   
+            GiaTien = giatien;
             return this;
         }
 
@@ -31,7 +26,7 @@ namespace quanlyxekhach.Models.LocationBuilder
 
         public Location Builder()
         {
-            return new Location( MaDD, TenDD, GiaTien);
+            return new Location(MaDD, TenDD, GiaTien);
         }
     }
 }

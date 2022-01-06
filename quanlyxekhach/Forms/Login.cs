@@ -6,7 +6,7 @@ using quanlyxekhach.IDAO;
 using System;
 using System.Windows.Forms;
 
-namespace quanlyxekhach
+namespace quanlyxekhach.Forms
 {
     public partial class Login : Form
     {

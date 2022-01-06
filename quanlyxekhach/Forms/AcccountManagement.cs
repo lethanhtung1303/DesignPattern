@@ -1,13 +1,12 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.DAO;
 using quanlyxekhach.IDAO;
-using quanlyxekhach.Models;
 using quanlyxekhach.Models.AccountBuilder;
 using System;
 using System.Data;
 using System.Windows.Forms;
 
-namespace quanlyxekhach
+namespace quanlyxekhach.Forms
 {
     public partial class AccountManagement : Form
     {
@@ -41,9 +40,13 @@ namespace quanlyxekhach
 
         private void btnChangeDataAcc_Click(object sender, EventArgs e)
         {
-
             IAccountBuilder accountBuilder = new AccountBuilder();
-            Account acc = accountBuilder.AddTenNV(txtNameEmp.Text).AddChucVu(txtPosition.Text).AddTenTK(txtUserName.Text).AddMatKhau(txtPass.Text).Builder();
+            Account acc = accountBuilder
+                .AddTenNV(txtNameEmp.Text)
+                .AddChucVu(txtPosition.Text)
+                .AddTenTK(txtUserName.Text)
+                .AddMatKhau(txtPass.Text)
+                .Builder();
 
             var UpdateAcc = dao.Update(acc);
 

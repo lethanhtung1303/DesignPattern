@@ -1,6 +1,6 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.IDAO;
-using quanlyxekhach.Models;
+using quanlyxekhach.Models.TicketBuilder;
 using System;
 using System.Data;
 using System.Diagnostics;

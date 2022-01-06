@@ -1,13 +1,14 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
 using quanlyxekhach.DAO;
+using quanlyxekhach.Forms;
 using quanlyxekhach.IDAO;
-using quanlyxekhach.Models;
+using quanlyxekhach.Models.EmployeeBuilder;
 using System;
 using System.Data;
 using System.Windows.Forms;
 
-namespace quanlyxekhach
+namespace quanlyxekhach.Forms
 {
     public partial class ManageEmployee : Form
     {
@@ -212,16 +213,28 @@ namespace quanlyxekhach
             if (CheckData())
             {
                 DataTable tb = employeeDAO.GetAll();
-                Employee employee = new Employee()
-                {
-                    MaNV = "NV" + Convert.ToString(tb.Rows.Count + 1),
-                    TenNV = txtNameE.Text,
-                    SDT = txtPhoneEmp.Text,
-                    GioiTinh = radMale.Checked ? true : false,
-                    ChucVu = txtPosition.Text,
-                    NgaySinh = dtBirth.Text,
-                    NgayVaoLam = dtDayWork.Text
-                };
+                //Employee employee = new Employee()
+                //{
+                //    MaNV = "NV" + Convert.ToString(tb.Rows.Count + 1),
+                //    TenNV = txtNameE.Text,
+                //    SDT = txtPhoneEmp.Text,
+                //    GioiTinh = radMale.Checked ? true : false,
+                //    ChucVu = txtPosition.Text,
+                //    NgaySinh = dtBirth.Text,
+                //    NgayVaoLam = dtDayWork.Text
+                //};
+
+                IEmployeeBuilder employeeBuilder = new EmployeeBuilder();
+                Employee employee = employeeBuilder
+                    .AddMaNV("NV" + Convert.ToString(tb.Rows.Count + 1))
+                    .AddTenNV(txtNameE.Text)
+                    .AddSDT(txtPhoneEmp.Text)
+                    .AddGioiTinh(radMale.Checked ? true : false)
+                    .AddChucVu(txtPosition.Text)
+                    .AddNgaySinh(dtBirth.Text)
+                    .AddNgayVaoLam(dtDayWork.Text)
+                    .Builder();
+
                 if (employeeDAO.Insert(employee))
                 {
                     MessageBox.Show("Thêm Nhân Viên thành công!!!",
@@ -296,16 +309,28 @@ namespace quanlyxekhach
         {
             if (CheckData())
             {
-                Employee employee = new Employee()
-                {
-                    MaNV = maNV,
-                    TenNV = txtNameE.Text,
-                    SDT = txtPhoneEmp.Text,
-                    GioiTinh = radMale.Checked ? true : false,
-                    ChucVu = txtPosition.Text,
-                    NgaySinh = dtBirth.Text,
-                    NgayVaoLam = dtDayWork.Text
-                };
+                //Employee employee = new Employee()
+                //{
+                //    MaNV = maNV,
+                //    TenNV = txtNameE.Text,
+                //    SDT = txtPhoneEmp.Text,
+                //    GioiTinh = radMale.Checked ? true : false,
+                //    ChucVu = txtPosition.Text,
+                //    NgaySinh = dtBirth.Text,
+                //    NgayVaoLam = dtDayWork.Text
+                //};
+
+                IEmployeeBuilder employeeBuilder = new EmployeeBuilder();
+                Employee employee = employeeBuilder
+                    .AddMaNV(maNV)
+                    .AddTenNV(txtNameE.Text)
+                    .AddSDT(txtPhoneEmp.Text)
+                    .AddGioiTinh(radMale.Checked ? true : false)
+                    .AddChucVu(txtPosition.Text)
+                    .AddNgaySinh(dtBirth.Text)
+                    .AddNgayVaoLam(dtDayWork.Text)
+                    .Builder();
+
                 if (employeeDAO.Update(employee))
                 {
                     MessageBox.Show("Sửa Nhân Viên thành công!!!",
@@ -328,10 +353,11 @@ namespace quanlyxekhach
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Employee employee = new Employee()
-                {
-                    MaNV = maNV,
-                };
+                IEmployeeBuilder employeeBuilder = new EmployeeBuilder();
+                Employee employee = employeeBuilder
+                    .AddMaNV(maNV)
+                    .Builder();
+
                 if (employeeDAO.Delete(employee))
                 {
                     MessageBox.Show("Xóa Nhân Viên thành công!!!",

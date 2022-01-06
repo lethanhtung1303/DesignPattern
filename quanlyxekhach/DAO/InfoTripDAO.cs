@@ -1,7 +1,9 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.IDAO;
-using quanlyxekhach.Models;
+using quanlyxekhach.Models.EmployeeBuilder;
+using quanlyxekhach.Models.InfoTripBuilder;
 using quanlyxekhach.Models.LocationBuilder;
+using quanlyxekhach.Models.VehicleBuilder;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -165,17 +167,30 @@ namespace quanlyxekhach.DAO
             adapter.Fill(tb);
             foreach (DataRow dataRow in tb.Rows)
             {
-                Employee taiXe = new Employee
-                {
-                    STT = Convert.ToInt32(dataRow["stt"]),
-                    MaNV = Convert.ToString(dataRow["MaNV"]),
-                    TenNV = Convert.ToString(dataRow["TenNV"]),
-                    ChucVu = Convert.ToString(dataRow["ChucVu"]),
-                    GioiTinh = Convert.ToBoolean(dataRow["GioiTinh"]),
-                    SDT = Convert.ToString(dataRow["SDT"]),
-                    NgaySinh = Convert.ToString(dataRow["NgaySinh"]),
-                    NgayVaoLam = Convert.ToString(dataRow["NgayVaoLam"])
-                };
+                //Employee taiXe = new Employee
+                //{
+                //    STT = Convert.ToInt32(dataRow["stt"]),
+                //    MaNV = Convert.ToString(dataRow["MaNV"]),
+                //    TenNV = Convert.ToString(dataRow["TenNV"]),
+                //    ChucVu = Convert.ToString(dataRow["ChucVu"]),
+                //    GioiTinh = Convert.ToBoolean(dataRow["GioiTinh"]),
+                //    SDT = Convert.ToString(dataRow["SDT"]),
+                //    NgaySinh = Convert.ToString(dataRow["NgaySinh"]),
+                //    NgayVaoLam = Convert.ToString(dataRow["NgayVaoLam"])
+                //};
+
+                IEmployeeBuilder employeeBuilder = new EmployeeBuilder();
+                Employee taiXe = employeeBuilder
+                    .AddSTT(Convert.ToInt32(dataRow["stt"]))
+                    .AddMaNV(Convert.ToString(dataRow["MaNV"]))
+                    .AddTenNV(Convert.ToString(dataRow["TenNV"]))
+                    .AddSDT(Convert.ToString(dataRow["SDT"]))
+                    .AddGioiTinh(Convert.ToBoolean(dataRow["GioiTinh"]))
+                    .AddChucVu(Convert.ToString(dataRow["ChucVu"]))
+                    .AddNgaySinh(Convert.ToString(dataRow["NgaySinh"]))
+                    .AddNgayVaoLam(Convert.ToString(dataRow["NgayVaoLam"]))
+                    .Builder();
+
                 listTaiXe.Add(taiXe);
             }
             con.Close();
@@ -195,17 +210,30 @@ namespace quanlyxekhach.DAO
             adapter.Fill(tb);
             foreach (DataRow dataRow in tb.Rows)
             {
-                Employee hdv = new Employee
-                {
-                    STT = Convert.ToInt32(dataRow["stt"]),
-                    MaNV = Convert.ToString(dataRow["MaNV"]),
-                    TenNV = Convert.ToString(dataRow["TenNV"]),
-                    ChucVu = Convert.ToString(dataRow["ChucVu"]),
-                    GioiTinh = Convert.ToBoolean(dataRow["GioiTinh"]),
-                    SDT = Convert.ToString(dataRow["SDT"]),
-                    NgaySinh = Convert.ToString(dataRow["NgaySinh"]),
-                    NgayVaoLam = Convert.ToString(dataRow["NgayVaoLam"])
-                };
+                //Employee hdv = new Employee
+                //{
+                //    STT = Convert.ToInt32(dataRow["stt"]),
+                //    MaNV = Convert.ToString(dataRow["MaNV"]),
+                //    TenNV = Convert.ToString(dataRow["TenNV"]),
+                //    ChucVu = Convert.ToString(dataRow["ChucVu"]),
+                //    GioiTinh = Convert.ToBoolean(dataRow["GioiTinh"]),
+                //    SDT = Convert.ToString(dataRow["SDT"]),
+                //    NgaySinh = Convert.ToString(dataRow["NgaySinh"]),
+                //    NgayVaoLam = Convert.ToString(dataRow["NgayVaoLam"])
+                //};
+
+                IEmployeeBuilder employeeBuilder = new EmployeeBuilder();
+                Employee hdv = employeeBuilder
+                    .AddSTT(Convert.ToInt32(dataRow["stt"]))
+                    .AddMaNV(Convert.ToString(dataRow["MaNV"]))
+                    .AddTenNV(Convert.ToString(dataRow["TenNV"]))
+                    .AddSDT(Convert.ToString(dataRow["SDT"]))
+                    .AddGioiTinh(Convert.ToBoolean(dataRow["GioiTinh"]))
+                    .AddChucVu(Convert.ToString(dataRow["ChucVu"]))
+                    .AddNgaySinh(Convert.ToString(dataRow["NgaySinh"]))
+                    .AddNgayVaoLam(Convert.ToString(dataRow["NgayVaoLam"]))
+                    .Builder();
+
                 listHDV.Add(hdv);
             }
             con.Close();
@@ -227,7 +255,7 @@ namespace quanlyxekhach.DAO
             {
                 ILocationBuilder locationBuilder = new LocationBuilder();
                 Location location = locationBuilder.AddMaDD(Convert.ToString(dataRow["MaDD"]))
-                    .AddTenDD(Convert.ToString(dataRow["TebDD"])).AddGiaTien(Convert.ToInt32(dataRow["GiaTien"])).Builder(); 
+                    .AddTenDD(Convert.ToString(dataRow["TebDD"])).AddGiaTien(Convert.ToInt32(dataRow["GiaTien"])).Builder();
 
                 listLocation.Add(location);
             }
@@ -248,13 +276,22 @@ namespace quanlyxekhach.DAO
             adapter.Fill(tb);
             foreach (DataRow dataRow in tb.Rows)
             {
-                Vehicle vehicle = new Vehicle
-                {
-                    stt = Convert.ToInt32(dataRow["stt"]),
-                    MaXe = Convert.ToString(dataRow["MaXe"]),
-                    MaTaiXe = Convert.ToString(dataRow["MaTaiXe"]),
-                    MaHDV = Convert.ToString(dataRow["MaHDV"])
-                };
+                //Vehicle vehicle = new Vehicle
+                //{
+                //    stt = Convert.ToInt32(dataRow["stt"]),
+                //    MaXe = Convert.ToString(dataRow["MaXe"]),
+                //    MaTaiXe = Convert.ToString(dataRow["MaTaiXe"]),
+                //    MaHDV = Convert.ToString(dataRow["MaHDV"])
+                //};
+
+                IVehicleBuilder vehicleBuilder = new VehicleBuilder();
+                Vehicle vehicle = vehicleBuilder
+                    .Addstt(Convert.ToInt32(dataRow["stt"]))
+                    .AddMaXe(Convert.ToString(dataRow["MaXe"]))
+                    .AddMaTaiXe(Convert.ToString(dataRow["MaTaiXe"]))
+                    .AddMaHDV(Convert.ToString(dataRow["MaHDV"]))
+                    .Builder();
+
                 listVehicle.Add(vehicle);
             }
             con.Close();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using quanlyxekhach.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace quanlyxekhach

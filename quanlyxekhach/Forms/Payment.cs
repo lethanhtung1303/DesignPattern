@@ -1,14 +1,13 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.CommandButton;
 using quanlyxekhach.DAO;
-using quanlyxekhach.formFactory;
 using quanlyxekhach.IDAO;
-using quanlyxekhach.Models;
+using quanlyxekhach.Models.CustomerBuilder;
 using quanlyxekhach.Models.TicketBuilder;
 using System;
 using System.Windows.Forms;
 
-namespace quanlyxekhach
+namespace quanlyxekhach.Forms
 {
     public partial class Payment : Form
     {
@@ -182,12 +181,20 @@ namespace quanlyxekhach
             {
                 var toTalCustomer = customerDao.Maxstt();
                 var totalTicket = ticketDao.MaxStt();
-                Customer customer = new Customer();
+                //Customer customer = new Customer();
 
-                customer.maKH = "KH" + Convert.ToString(toTalCustomer + 1);
-                customer.tenKH = txtCustomerName.Text;
-                customer.sdt = txtPhoneNum.Text;
-                customer.gioiTinh = radMaleCus.Checked ? true : false;
+                //customer.maKH = "KH" + Convert.ToString(toTalCustomer + 1);
+                //customer.tenKH = txtCustomerName.Text;
+                //customer.sdt = txtPhoneNum.Text;
+                //customer.gioiTinh = radMaleCus.Checked ? true : false;
+
+                ICustomerBuilder customerBuilder = new CustomerBuilder();
+                Customer customer = customerBuilder
+                    .AddmaKH("KH" + Convert.ToString(toTalCustomer + 1))
+                    .AddtenKH(txtCustomerName.Text)
+                    .Addsdt(txtPhoneNum.Text)
+                    .AddgioiTinh(radMaleCus.Checked ? true : false)
+                    .Builder();
 
                 var addCustomer = customerDao.Insert(customer);
                 if (addCustomer)
@@ -204,7 +211,6 @@ namespace quanlyxekhach
                         .AddMaChuyenXe(cbIDveh.Text)
                         .AddTenDD(cbLocation.Text)
                         .Builder();
-                
 
                     var addTicket = ticketDao.Add(ticket);
                     if (addTicket)
