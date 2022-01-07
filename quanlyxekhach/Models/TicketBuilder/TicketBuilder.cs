@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace quanlyxekhach.Models.TicketBuilder
+﻿namespace quanlyxekhach.Models.TicketBuilder
 {
-    class TicketBuilder : ITicketBuilder
+    internal class TicketBuilder : ITicketBuilder
     {
         public int stt { get; set; }
         public string MaPhieu { get; set; }
@@ -21,6 +15,7 @@ namespace quanlyxekhach.Models.TicketBuilder
         public string MaChuyenxe { get; set; }
         public string NgayKhoiHanh { get; set; }
         public string TenDD { get; set; }
+
         public TicketBuilder AddChoNgoi(string chongoi)
         {
             ChoNgoi = chongoi;

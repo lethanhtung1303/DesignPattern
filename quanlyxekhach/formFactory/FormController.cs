@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace quanlyxekhach.formFactory
@@ -29,7 +25,7 @@ namespace quanlyxekhach.formFactory
         }
 
         // lấy thông tin để chuyển form
-        public void FormRequest(String request, string dataSend, Form formFrom )
+        public void FormRequest(String request, string dataSend, Form formFrom)
         {
             changeForm.dispatch(request, dataSend, formFrom);
         }

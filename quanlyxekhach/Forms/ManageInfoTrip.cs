@@ -2,12 +2,12 @@
 using quanlyxekhach.CommandButton;
 using quanlyxekhach.DAO;
 using quanlyxekhach.IDAO;
-using quanlyxekhach.Models;
+using quanlyxekhach.Models.InfoTripBuilder;
 using System;
 using System.Data;
 using System.Windows.Forms;
 
-namespace quanlyxekhach
+namespace quanlyxekhach.Forms
 {
     public partial class ManageInfoTrip : Form
     {
@@ -123,16 +123,29 @@ namespace quanlyxekhach
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            InfoTrip infoTrip = new InfoTrip();
-            infoTrip.maChuyen = maChuyen;
-            infoTrip.maTaiXe = cbIdDriver.Text;
-            infoTrip.tenTaiXe = cbNameDriver.Text;
-            infoTrip.maHuongDanVien = cbIdTG.Text;
-            infoTrip.tenHuongDanVien = cbNameTG.Text;
-            infoTrip.maCX = cbIdVeh.Text;
-            infoTrip.tenDD = cbNameLocation.Text;
-            infoTrip.ngayBatDau = dtstar.Value;
-            infoTrip.ngayKetThuc = dtEnd.Value;
+            //InfoTrip infoTrip = new InfoTrip();
+            //infoTrip.maChuyen = maChuyen;
+            //infoTrip.maTaiXe = cbIdDriver.Text;
+            //infoTrip.tenTaiXe = cbNameDriver.Text;
+            //infoTrip.maHuongDanVien = cbIdTG.Text;
+            //infoTrip.tenHuongDanVien = cbNameTG.Text;
+            //infoTrip.maCX = cbIdVeh.Text;
+            //infoTrip.tenDD = cbNameLocation.Text;
+            //infoTrip.ngayBatDau = dtstar.Value;
+            //infoTrip.ngayKetThuc = dtEnd.Value;
+
+            IInfoTripBuilder infoTripBuilder = new InfoTripBuilder();
+            InfoTrip infoTrip = infoTripBuilder
+                .AddmaChuyen(maChuyen)
+                .AddmaTaiXe(cbIdDriver.Text)
+                .AddtenTaiXe(cbNameDriver.Text)
+                .AddmaHuongDanVien(cbIdTG.Text)
+                .AddtenHuongDanVien(cbNameTG.Text)
+                .AddmaCX(cbIdVeh.Text)
+                .AddtenDD(cbNameLocation.Text)
+                .AddngayBatDau(dtstar.Value)
+                .AddngayKetThuc(dtEnd.Value)
+                .Builder();
 
             if (infoTripDAO.Update(infoTrip))
             {
@@ -155,16 +168,30 @@ namespace quanlyxekhach
         {
             DataTable tb = infoTripDAO.GetAll();
             int sttCount = tb.Rows.Count;
-            InfoTrip infoTrip = new InfoTrip();
-            infoTrip.maChuyen = "CD" + Convert.ToString(sttCount + 1);
-            infoTrip.maTaiXe = cbIdDriver.Text;
-            infoTrip.tenTaiXe = cbNameDriver.Text;
-            infoTrip.maHuongDanVien = cbIdTG.Text;
-            infoTrip.tenHuongDanVien = cbNameTG.Text;
-            infoTrip.maCX = cbIdVeh.Text;
-            infoTrip.tenDD = cbNameLocation.Text;
-            infoTrip.ngayBatDau = dtstar.Value;
-            infoTrip.ngayKetThuc = dtEnd.Value;
+
+            //InfoTrip infoTrip = new InfoTrip();
+            //infoTrip.maChuyen = "CD" + Convert.ToString(sttCount + 1);
+            //infoTrip.maTaiXe = cbIdDriver.Text;
+            //infoTrip.tenTaiXe = cbNameDriver.Text;
+            //infoTrip.maHuongDanVien = cbIdTG.Text;
+            //infoTrip.tenHuongDanVien = cbNameTG.Text;
+            //infoTrip.maCX = cbIdVeh.Text;
+            //infoTrip.tenDD = cbNameLocation.Text;
+            //infoTrip.ngayBatDau = dtstar.Value;
+            //infoTrip.ngayKetThuc = dtEnd.Value;
+
+            IInfoTripBuilder infoTripBuilder = new InfoTripBuilder();
+            InfoTrip infoTrip = infoTripBuilder
+                .AddmaChuyen("CD" + Convert.ToString(sttCount + 1))
+                .AddmaTaiXe(cbIdDriver.Text)
+                .AddtenTaiXe(cbNameDriver.Text)
+                .AddmaHuongDanVien(cbIdTG.Text)
+                .AddtenHuongDanVien(cbNameTG.Text)
+                .AddmaCX(cbIdVeh.Text)
+                .AddtenDD(cbNameLocation.Text)
+                .AddngayBatDau(dtstar.Value)
+                .AddngayKetThuc(dtEnd.Value)
+                .Builder();
 
             if (infoTripDAO.Insert(infoTrip))
             {

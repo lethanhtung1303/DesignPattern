@@ -1,4 +1,7 @@
-﻿using quanlyxekhach.Models;
+﻿using quanlyxekhach.Models.EmployeeBuilder;
+using quanlyxekhach.Models.InfoTripBuilder;
+using quanlyxekhach.Models.LocationBuilder;
+using quanlyxekhach.Models.VehicleBuilder;
 using System.Collections.Generic;
 using System.Data;
 

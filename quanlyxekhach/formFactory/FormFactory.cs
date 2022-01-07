@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using quanlyxekhach.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace quanlyxekhach.formFactory
@@ -28,11 +25,11 @@ namespace quanlyxekhach.formFactory
             {
                 return new ManageEmployee();
             }
-            else if(nameForm == "EMPLOYEE_INFO_TRIP")
+            else if (nameForm == "EMPLOYEE_INFO_TRIP")
             {
                 return new ManageInfoTrip(dataSend);
             }
-            else if(nameForm == "EMPLOYEE_INFO_PAYMENT")
+            else if (nameForm == "EMPLOYEE_INFO_PAYMENT")
             {
                 return new ManageTicket(dataSend);
             }

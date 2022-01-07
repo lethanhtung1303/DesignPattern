@@ -55,34 +55,34 @@
     <Compile Include="formFactory\ChangeForm.cs" />
     <Compile Include="formFactory\FormController.cs" />
     <Compile Include="formFactory\FormFactory.cs" />
-    <Compile Include="Form\Login.cs">
+    <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Login.Designer.cs">
+    <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ManageCustomer.cs">
+    <Compile Include="Forms\ManageCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ManageCustomer.Designer.cs">
+    <Compile Include="Forms\ManageCustomer.Designer.cs">
       <DependentUpon>ManageCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ManageEmployee.cs">
+    <Compile Include="Forms\ManageEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ManageEmployee.Designer.cs">
+    <Compile Include="Forms\ManageEmployee.Designer.cs">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ManageInfoTrip.cs">
+    <Compile Include="Forms\ManageInfoTrip.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ManageInfoTrip.Designer.cs">
+    <Compile Include="Forms\ManageInfoTrip.Designer.cs">
       <DependentUpon>ManageInfoTrip.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ManageTicket.cs">
+    <Compile Include="Forms\ManageTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ManageTicket.Designer.cs">
+    <Compile Include="Forms\ManageTicket.Designer.cs">
       <DependentUpon>ManageTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="IDAO\IAccountDao.cs" />
@@ -94,19 +94,25 @@
     <Compile Include="Models\AccountBuilder\Account.cs" />
     <Compile Include="DAO\AccountDao.cs" />
     <Compile Include="AbstractModel\SqlFactory.cs" />
-    <Compile Include="Form\AcccountManagement.cs">
+    <Compile Include="Forms\AcccountManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AcccountManagement.Designer.cs">
+    <Compile Include="Forms\AcccountManagement.Designer.cs">
       <DependentUpon>AcccountManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBuilder\AccountBuilder.cs" />
     <Compile Include="Models\AccountBuilder\IAccountBuilder.cs" />
-    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerBuilder\Customer.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
-    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\CustomerBuilder\CustomerBuilder.cs" />
+    <Compile Include="Models\CustomerBuilder\ICustomerBuilder.cs" />
+    <Compile Include="Models\EmployeeBuilder\EmployeeBuilder.cs" />
+    <Compile Include="Models\EmployeeBuilder\Employee.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
-    <Compile Include="Models\InfoTrip.cs" />
+    <Compile Include="Models\EmployeeBuilder\IEmployeeBuilder.cs" />
+    <Compile Include="Models\InfoTripBuilder\InfoTripBuilder.cs" />
+    <Compile Include="Models\InfoTripBuilder\IInfoTripBuilder.cs" />
+    <Compile Include="Models\InfoTripBuilder\InfoTrip.cs" />
     <Compile Include="DAO\InfoTripDAO.cs" />
     <Compile Include="Models\LocationBuilder\ILocationBuilder.cs" />
     <Compile Include="Models\LocationBuilder\Location.cs" />
@@ -114,46 +120,48 @@
     <Compile Include="Models\LocationBuilder\LocationBuilder.cs" />
     <Compile Include="Models\TicketBuilder\ITicketBuilder.cs" />
     <Compile Include="Models\TicketBuilder\TicketBuilder.cs" />
-    <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Models\VehicleBuilder\VehicleBuilder.cs" />
+    <Compile Include="Models\VehicleBuilder\IVehicleBuilder.cs" />
+    <Compile Include="Models\VehicleBuilder\Vehicle.cs" />
     <Compile Include="Models\TicketBuilder\Ticket.cs" />
     <Compile Include="DAO\TicketDao.cs" />
-    <Compile Include="Form\Payment.cs">
+    <Compile Include="Forms\Payment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Payment.Designer.cs">
+    <Compile Include="Forms\Payment.Designer.cs">
       <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Form\Register.cs">
+    <Compile Include="Forms\Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Register.Designer.cs">
+    <Compile Include="Forms\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="StrateryPattern\Ivalidation.cs" />
     <Compile Include="StrateryPattern\MyTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Form\AcccountManagement.resx">
+    <EmbeddedResource Include="Forms\AcccountManagement.resx">
       <DependentUpon>AcccountManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Login.resx">
+    <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ManageCustomer.resx">
+    <EmbeddedResource Include="Forms\ManageCustomer.resx">
       <DependentUpon>ManageCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ManageEmployee.resx">
+    <EmbeddedResource Include="Forms\ManageEmployee.resx">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ManageInfoTrip.resx">
+    <EmbeddedResource Include="Forms\ManageInfoTrip.resx">
       <DependentUpon>ManageInfoTrip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ManageTicket.resx">
+    <EmbeddedResource Include="Forms\ManageTicket.resx">
       <DependentUpon>ManageTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Payment.resx">
+    <EmbeddedResource Include="Forms\Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -165,7 +173,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form\Register.resx">
+    <EmbeddedResource Include="Forms\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

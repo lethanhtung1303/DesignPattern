@@ -2,13 +2,12 @@
 using quanlyxekhach.CommandButton;
 using quanlyxekhach.DAO;
 using quanlyxekhach.IDAO;
-using quanlyxekhach.Models;
 using quanlyxekhach.Models.TicketBuilder;
 using System;
 using System.Data;
 using System.Windows.Forms;
 
-namespace quanlyxekhach
+namespace quanlyxekhach.Forms
 {
     public partial class ManageTicket : Form
     {
@@ -19,6 +18,7 @@ namespace quanlyxekhach
 
         private Ticket currentTicket;
         private string dataInfo;
+
         private void ManageTicket_Load(object sender, EventArgs e)
         {
             showAll();
@@ -64,7 +64,7 @@ namespace quanlyxekhach
             {
                 // get data in cells of gridView
                 DataGridViewRow row = dataGridView1.Rows[index];
-                ITicketBuilder ticketBuilder = new TicketBuilder(); 
+                ITicketBuilder ticketBuilder = new TicketBuilder();
                 currentTicket = ticketBuilder.AddMaPhieu(Convert.ToString(row.Cells[1].Value))
                     .AdddMaKh(Convert.ToString(row.Cells[2].Value))
                     .AddTenKH(Convert.ToString(row.Cells[3].Value))

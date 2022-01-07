@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace quanlyxekhach.Models.AccountBuilder
+﻿namespace quanlyxekhach.Models.AccountBuilder
 {
-    class AccountBuilder:IAccountBuilder
+    internal class AccountBuilder : IAccountBuilder
     {
         public int stt { get; set; }
         public string MaNV { get; set; }

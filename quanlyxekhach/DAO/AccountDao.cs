@@ -1,11 +1,9 @@
 ﻿using quanlyxekhach.AbstractModel;
 using quanlyxekhach.IDAO;
-using quanlyxekhach.Models;
 using quanlyxekhach.Models.AccountBuilder;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics;
 
 namespace quanlyxekhach.DAO
 {
@@ -144,17 +142,15 @@ namespace quanlyxekhach.DAO
             Account account;
             foreach (DataRow dataRow in tb.Rows)
             {
-                 account = accountBuilder.AddStt(Convert.ToInt32(dataRow["stt"]))
-                    .AddMaNV(dataRow["MaNV"].ToString())
-                    .AddTenNV(dataRow["TenNV"].ToString())
-                    .AddChucVu(dataRow["ChucVu"].ToString())
-                    .AddTenTK(dataRow["TenTK"].ToString())
-                    .AddMatKhau(dataRow["MatKhau"].ToString()).Builder();
+                account = accountBuilder.AddStt(Convert.ToInt32(dataRow["stt"]))
+                   .AddMaNV(dataRow["MaNV"].ToString())
+                   .AddTenNV(dataRow["TenNV"].ToString())
+                   .AddChucVu(dataRow["ChucVu"].ToString())
+                   .AddTenTK(dataRow["TenTK"].ToString())
+                   .AddMatKhau(dataRow["MatKhau"].ToString()).Builder();
                 return account;
             }
             return null;
-        
         }
-
     }
 }
