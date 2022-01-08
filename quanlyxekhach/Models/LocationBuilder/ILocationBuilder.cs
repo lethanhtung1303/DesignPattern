@@ -1,6 +1,6 @@
 ﻿namespace quanlyxekhach.Models.LocationBuilder
 {
-    internal interface ILocationBuilder
+    public interface ILocationBuilder
     {
         LocationBuilder AddMaDD(string madd);
 

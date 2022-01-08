@@ -2,7 +2,7 @@
 
 namespace quanlyxekhach.StrateryPattern
 {
-    internal class MyTextBox : TextBox
+    public class MyTextBox : TextBox
     {
         public ValidationType validationType = ValidationType.INTERGER;
         public Ivalidation ivalidation = new IntValid();

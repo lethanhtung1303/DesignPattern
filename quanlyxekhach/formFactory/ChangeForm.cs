@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace quanlyxekhach.formFactory
 {
-    internal class ChangeForm
+    public class ChangeForm
     {
         private FormFactory formFactory;
 

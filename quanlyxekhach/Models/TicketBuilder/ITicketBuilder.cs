@@ -1,6 +1,6 @@
 ﻿namespace quanlyxekhach.Models.TicketBuilder
 {
-    internal interface ITicketBuilder
+    public interface ITicketBuilder
     {
         TicketBuilder AddSTT(int Stt);
 

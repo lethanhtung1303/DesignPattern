@@ -2,7 +2,7 @@
 
 namespace quanlyxekhach.CommandButton
 {
-    internal abstract class CommandButtonManage
+    public abstract class CommandButtonManage
     {
         protected Button[] buttons;
 

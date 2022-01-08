@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace quanlyxekhach.AbstractModel
 {
-    internal class SqlFactory : AbstractDbFactory
+    public class SqlFactory : AbstractDbFactory
     {
         private SqlFactory()
         {

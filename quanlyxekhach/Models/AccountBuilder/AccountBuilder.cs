@@ -1,6 +1,6 @@
 ﻿namespace quanlyxekhach.Models.AccountBuilder
 {
-    internal class AccountBuilder : IAccountBuilder
+    public class AccountBuilder : IAccountBuilder
     {
         public int stt { get; set; }
         public string MaNV { get; set; }

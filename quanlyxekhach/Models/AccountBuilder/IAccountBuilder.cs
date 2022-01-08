@@ -1,6 +1,6 @@
 ﻿namespace quanlyxekhach.Models.AccountBuilder
 {
-    internal interface IAccountBuilder
+    public interface IAccountBuilder
     {
         AccountBuilder AddStt(int stt);
 

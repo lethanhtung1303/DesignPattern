@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace quanlyxekhach.formFactory
 {
-    internal class FormFactory
+    public class FormFactory
     {
         public FormFactory()
         {

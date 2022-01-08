@@ -1,6 +1,6 @@
 ﻿namespace quanlyxekhach.Models.LocationBuilder
 {
-    internal class LocationBuilder : ILocationBuilder
+    public class LocationBuilder : ILocationBuilder
     {
         public string MaDD { get; set; }
         public string TenDD { get; set; }

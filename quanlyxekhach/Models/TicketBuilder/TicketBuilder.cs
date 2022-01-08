@@ -1,6 +1,6 @@
 ﻿namespace quanlyxekhach.Models.TicketBuilder
 {
-    internal class TicketBuilder : ITicketBuilder
+    public class TicketBuilder : ITicketBuilder
     {
         public int stt { get; set; }
         public string MaPhieu { get; set; }
