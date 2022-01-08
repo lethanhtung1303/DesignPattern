@@ -17,7 +17,7 @@
 ## Cách cấu hình và chạy
 - Bước 1: Mở và chạy file: DataBaseQLXK.sql
 - Bước 2: Mở file: quanlyxekhach.sln
-- Bước 3: Thay đổi data source trong connectionStrings của file App.config phù hợp với máy người dùng
+- Bước 3: Thay đổi Data Source trong connectionString của file App.config phù hợp với máy người dùng
 - Bước 4: Chạy Project và kiểm tra
 
 **LƯU Ý:** Tài khoản được cung cấp sẳn:
