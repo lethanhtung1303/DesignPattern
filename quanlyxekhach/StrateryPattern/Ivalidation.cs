@@ -14,12 +14,12 @@ namespace quanlyxekhach.StrateryPattern
         PHONE
     }
 
-    internal interface Ivalidation
+    public interface Ivalidation
     {
         bool valid(string text);
     }
 
-    internal class IntValid : Ivalidation
+    public class IntValid : Ivalidation
     {
         public bool valid(string text)
         {
@@ -27,7 +27,7 @@ namespace quanlyxekhach.StrateryPattern
         }
     }
 
-    internal class FloatValid : Ivalidation
+    public class FloatValid : Ivalidation
     {
         public bool valid(string text)
         {
@@ -35,7 +35,7 @@ namespace quanlyxekhach.StrateryPattern
         }
     }
 
-    internal class EmailValid : Ivalidation
+    public class EmailValid : Ivalidation
     {
         public bool valid(string text)
         {
@@ -54,7 +54,7 @@ namespace quanlyxekhach.StrateryPattern
         }
     }
 
-    internal class PhoneValid : Ivalidation
+    public class PhoneValid : Ivalidation
     {
         public bool valid(string text)
         {
@@ -71,7 +71,7 @@ namespace quanlyxekhach.StrateryPattern
         }
     }
 
-    internal class DatetimeValid : Ivalidation
+    public class DatetimeValid : Ivalidation
     {
         public bool valid(string text)
         {

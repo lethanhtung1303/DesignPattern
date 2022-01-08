@@ -2,7 +2,7 @@
 
 namespace quanlyxekhach.CommandButton
 {
-    internal class ManageButtonEnable : CommandButtonManage
+    public class ManageButtonEnable : CommandButtonManage
     {
         public ManageButtonEnable(params Button[] buttons) : base(buttons)
         {
